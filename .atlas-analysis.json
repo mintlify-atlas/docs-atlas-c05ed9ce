@@ -1,0 +1,92 @@
+{
+  "projectType": "saas",
+  "projectName": "SmartTube",
+  "projectDescription": "A free and open-source advanced media player for Android TVs and TV boxes with ad-blocking, SponsorBlock, and 8K support",
+  "theme": "palm",
+  "primaryColor": "#848c84",
+  "lightColor": "#15151c",
+  "darkColor": "#d2d3d4",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "device-compatibility",
+              "quick-start"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/overview",
+              "features/ad-blocking",
+              "features/sponsorblock",
+              "features/playback",
+              "features/casting",
+              "features/picture-in-picture"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/video-codecs",
+              "configuration/video-quality",
+              "configuration/hdr",
+              "configuration/settings",
+              "configuration/remote-control",
+              "configuration/voice-search"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/updating",
+              "guides/troubleshooting",
+              "guides/device-specific",
+              "guides/faq"
+            ]
+          },
+          {
+            "group": "Community & Development",
+            "pages": [
+              "community/support",
+              "community/contributing",
+              "community/building",
+              "community/donation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Ad-free playback with no video ads or banners",
+    "SponsorBlock integration for skipping sponsored segments",
+    "8K resolution and 60fps playback support",
+    "HDR compatibility for supported devices",
+    "Adjustable playback speed",
+    "Picture-in-Picture (PiP) mode",
+    "Casting support from mobile devices",
+    "Multiple video codec support (AV1, VP9, AVC)",
+    "Customizable UI and buttons",
+    "Works without Google Services",
+    "Support for Android 4.3 and above"
+  ],
+  "publicApiSurface": [
+    "SplashActivity - Main launcher entry point",
+    "BrowseActivity - Content browsing interface",
+    "PlaybackActivity - Video playback with controls",
+    "SearchActivity - Search functionality",
+    "SignInActivity - Account authentication",
+    "SettingsActivity - App configuration",
+    "Remote control linking via TV code",
+    "Intent filters for YouTube URLs and deep links",
+    "Voice search integration with bridge apps",
+    "Cast receiver for mobile device casting"
+  ]
+}
