@@ -1,0 +1,247 @@
+---
+title: Video Quality Settings
+description: Configure default video quality, resolution presets, and bandwidth settings in SmartTube for optimal playback experience
+---
+
+SmartTube provides flexible video quality configuration to match your device capabilities, bandwidth, and preferences.
+
+## Default Quality Configuration
+
+By default, SmartTube automatically selects the highest available quality for your videos. You can configure a default video preset to control the maximum resolution used.
+
+<Steps>
+  <Step title="Open Video Settings">
+    Navigate to **Settings** → **Video player** → **Video presets**
+  </Step>
+  
+  <Step title="Select Your Preset">
+    Choose from available presets:
+    - **None** (default) - remembers your last manual selection
+    - Specific resolutions (e.g., 1080p, 4K, 720p)
+    - Quality profiles with codec preferences
+  </Step>
+  
+  <Step title="Understanding Preset Behavior">
+    If you set a preset:
+    - SmartTube will use that profile initially for each video
+    - If unavailable, the next best available option is used
+    - You can still override the profile within each video player
+  </Step>
+</Steps>
+
+<Info>
+The "none" preset option will remember your last quality selection within the video player and use it for subsequent videos.
+</Info>
+
+## Choosing the Right Resolution
+
+To decide the optimal resolution and video quality for your setup, consider these limiting factors:
+
+<CardGroup cols={3}>
+  <Card title="Bandwidth" icon="signal">
+    Choose only up to the bitrate that your bandwidth can handle. Test your speed at [fast.com](https://fast.com).
+  </Card>
+  
+  <Card title="Display Resolution" icon="tv">
+    Match or slightly exceed your TV's native resolution (e.g., 1080p on a 720p display).
+  </Card>
+  
+  <Card title="TV Capabilities" icon="microchip">
+    Consider HDR support, 60fps capability, and codec hardware decoding.
+  </Card>
+</CardGroup>
+
+## Resolution Guidelines
+
+### Bandwidth Considerations
+
+| Resolution | Approximate Bitrate (VP9)* | Recommended Connection Speed |
+|:-----------|:--------------------------|:-----------------------------|
+| **8K** | ~45-80 Mbps | 100+ Mbps |
+| **4K (2160p)** | ~15-25 Mbps | 35+ Mbps |
+| **1440p** | ~9-15 Mbps | 20+ Mbps |
+| **1080p 60fps** | ~5-8 Mbps | 15+ Mbps |
+| **1080p** | ~3-5 Mbps | 10+ Mbps |
+| **720p** | ~1.5-3 Mbps | 5+ Mbps |
+| **480p** | ~0.5-1.5 Mbps | 3+ Mbps |
+
+<Note>
+*Bitrates are approximate and vary by content. AV1 uses ~30% less bandwidth than VP9. AVC uses ~30% more bandwidth than VP9.
+</Note>
+
+### Display Resolution Matching
+
+<Accordion title="How Resolution Affects Visual Quality">
+  **General Rule:** Select a video resolution that matches your TV's native display resolution.
+  
+  - **720p TV**: Select 720p or 1080p video
+  - **1080p TV**: Select 1080p or 1440p video
+  - **4K/UHD TV**: Select 2160p (4K) or higher video
+  
+  <Info>
+  The quality **might slightly improve** if you select the next higher resolution (e.g., 1080p on a 720p display), but don't expect a big difference. The improvement is usually minimal.
+  </Info>
+</Accordion>
+
+<Accordion title="Debug Information Display Resolution">
+  <Warning>
+  **The debug information display resolution is often incorrect!** 
+  
+  - If it says "1080p" but you have a 4K display, don't worry
+  - SmartTube works fine above 1080p
+  - You can verify by playing a 4K video - it will work correctly
+  - The debug info bug is cosmetic only
+  </Warning>
+</Accordion>
+
+## Automatic Quality Selection
+
+<Accordion title="Does SmartTube Auto-Select Highest Quality?">
+  **Yes, by default!** SmartTube automatically selects the highest available quality for your video.
+  
+  If you set a **video profile** under settings, that acts as a maximum for automatic selection.
+  
+  <Steps>
+    <Step title="Check Current Setting">
+      Go to **Settings** → **Video player** → **Video presets**
+    </Step>
+    
+    <Step title="Enable Highest Quality">
+      To always get the highest quality, set the preset to **"none"**
+    </Step>
+  </Steps>
+  
+  <Warning>
+  Do not confuse quality with bitrate! See the [video codecs](/configuration/video-codecs) section for more information on why lower bitrate can mean better efficiency, not worse quality.
+  </Warning>
+</Accordion>
+
+<Accordion title="Automatic Bandwidth-Based Selection">
+  <Info>
+  **Coming in a future update:** Automatic resolution selection based on available bandwidth is planned but not currently available.
+  </Info>
+  
+  **Current workaround:**
+  1. Test your bandwidth at [fast.com](https://fast.com)
+  2. Set a maximum resolution preset based on your speed
+  3. Use the guidelines table above to choose appropriately
+</Accordion>
+
+## Frame Rate Settings
+
+### 60fps vs 30fps
+
+<CardGroup cols={2}>
+  <Card title="60fps Benefits" icon="forward">
+    - Smoother motion in action scenes
+    - Better for gaming content and sports
+    - More fluid camera movements
+    - Requires ~50% more bandwidth
+  </Card>
+  
+  <Card title="30fps Considerations" icon="leaf">
+    - Lower bandwidth usage
+    - Perfectly acceptable for most content
+    - Save bandwidth and environment
+    - Standard for most traditional video
+  </Card>
+</CardGroup>
+
+<Tip>
+Generally, 60fps is an improvement, but if you personally don't notice (or mind) the difference, you can save bandwidth by not choosing 60fps options.
+</Tip>
+
+## Video Profile Settings
+
+Video profiles combine resolution, frame rate, and codec preferences into a single preset.
+
+### How to Change Video Profile
+
+<Tabs>
+  <Tab title="In-Player Override">
+    While watching a video:
+    
+    1. Press the **HQ** button in the bottom-left corner
+    2. Select your preferred quality option
+    3. Choose resolution, frame rate, and codec
+    4. The video will reload with new settings
+    
+    This override applies only to the current video.
+  </Tab>
+  
+  <Tab title="Default Preset">
+    To set a persistent default:
+    
+    1. Go to **Settings** → **Video player** → **Video presets**
+    2. Select your preferred default preset
+    3. This will be applied initially for all future videos
+    4. You can still override per-video using the HQ button
+  </Tab>
+</Tabs>
+
+## Troubleshooting Quality Issues
+
+<Accordion title="Why doesn't it autoselect the highest quality?">
+  **It does by default!** If it's not working:
+  
+  1. Check if you configured a video profile preset in settings
+  2. That preset acts as a maximum for automatic selection
+  3. To unset it, choose **"none"** in the preset menu
+  4. Remember: lower bitrate ≠ lower quality (it means better compression)
+</Accordion>
+
+<Accordion title="Can I set a maximum resolution by default?">
+  **Yes:**
+  
+  1. Go to **Settings** → **Video player** → **Video presets**
+  2. Select your maximum desired resolution
+  3. SmartTube will pick that profile if available
+  4. Otherwise, the next best available option will be used
+  5. You can still change quality while watching any video
+</Accordion>
+
+<Accordion title="The video is buffering a lot">
+  The issue might not be specific to SmartTube. YouTube appears to sometimes discriminate against 3rd party apps.
+  
+  **Try these solutions:**
+  
+  - Reduce the resolution (or change it back)
+  - Change the video format to AVC
+  - Increase the buffer in the settings (see [Settings](/configuration/settings))
+  - Hit the back button and try playing the video again
+  - Switch to encrypted DNS like NextDNS (see FAQ in main documentation)
+</Accordion>
+
+## Quality Optimization Tips
+
+<CardGroup cols={2}>
+  <Card title="Match Your Display" icon="display">
+    Set your default preset to match your TV's native resolution for the best balance of quality and bandwidth.
+  </Card>
+  
+  <Card title="Test Your Connection" icon="wifi">
+    Use [fast.com](https://fast.com) to measure your actual bandwidth before selecting high resolutions.
+  </Card>
+  
+  <Card title="Use Modern Codecs" icon="microchip">
+    VP9 or AV1 codecs provide better quality at lower bitrates compared to AVC.
+  </Card>
+  
+  <Card title="Adjust for Content" icon="sliders">
+    You can always override quality per-video - use higher quality for movies, lower for podcasts.
+  </Card>
+</CardGroup>
+
+## Related Settings
+
+<Card title="Video Codecs" icon="film" href="/configuration/video-codecs">
+  Learn about AV1, VP9, and AVC codecs and which to choose for your device
+</Card>
+
+<Card title="HDR Settings" icon="sun" href="/configuration/hdr">
+  Configure HDR (High Dynamic Range) if your TV and device support it
+</Card>
+
+<Card title="Buffer Settings" icon="server" href="/configuration/settings">
+  Adjust buffering settings to prevent playback interruptions
+</Card>

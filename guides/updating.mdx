@@ -1,0 +1,163 @@
+---
+title: Updating SmartTube
+description: Learn how to update SmartTube using the built-in updater and troubleshoot update issues
+---
+
+## Built-in Updater
+
+SmartTube includes a **built-in updater** that makes keeping your app current simple and straightforward. You only need to follow the installation procedure once - after that, updates are handled automatically.
+
+<Info>
+The built-in updater works for both the **beta** and **stable** release channels. Beta receives new features and bugfixes faster than stable.
+</Info>
+
+## How Auto-Update Check Works
+
+<Steps>
+  <Step title="Automatic Check">
+    A few seconds after launching SmartTube, the app automatically checks for available updates
+  </Step>
+  
+  <Step title="Notification">
+    If an update is available, you'll see a notification with the changelog showing what's new
+  </Step>
+  
+  <Step title="Download & Install">
+    Choose to download and install the update - SmartTube will handle the rest
+  </Step>
+</Steps>
+
+### Update Check Frequency
+
+SmartTube checks for updates shortly after each app launch. This ensures you're always informed about new versions without being intrusive.
+
+<Tip>
+You can disable automatic update checks in the settings if you prefer to update manually.
+</Tip>
+
+## Manual Update Process
+
+If you want to check for updates manually or missed a notification:
+
+<Steps>
+  <Step title="Open Settings">
+    Navigate to the SmartTube settings menu
+  </Step>
+  
+  <Step title="Go to About">
+    Select the **About** section in settings
+  </Step>
+  
+  <Step title="Check for Updates">
+    Click **Check for updates** to manually trigger an update check
+  </Step>
+  
+  <Step title="Review Changelog">
+    If an update is available, review the changelog and proceed with installation
+  </Step>
+</Steps>
+
+## Finding the Changelog
+
+You can view the full changelog and release history through multiple channels:
+
+- **In-app**: Shown when an update is available
+- **Telegram Channel**: [@SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) (readable without an account)
+- **GitHub Releases**: [github.com/yuliskov/SmartTube/releases](https://github.com/yuliskov/SmartTube/releases/)
+
+<Info>
+The changelog includes detailed information about new features, bug fixes, and any known issues.
+</Info>
+
+## Troubleshooting Failed Updates
+
+If an update fails to install, try these solutions:
+
+<AccordionGroup>
+  <Accordion title="Disk Space is Full">
+    This is the most common cause of update failures.
+    
+    **Solution:**
+    1. Go to your Android TV settings
+    2. Navigate to **Storage** or **Device Preferences > Storage**
+    3. Check available space - you need at least 100-200 MB free
+    4. Clear cache from other apps or uninstall unused apps
+    5. Try updating again via _Settings > About > Check for updates_
+  </Accordion>
+  
+  <Accordion title="Download Incomplete or Corrupted">
+    Sometimes the update file doesn't download correctly.
+    
+    **Solution:**
+    1. Wait for your internet connection to stabilize
+    2. Go to _Settings > About > Check for updates_
+    3. Download the update again
+    4. If the problem persists, try downloading during off-peak hours
+  </Accordion>
+  
+  <Accordion title="Installation Prompt Not Appearing">
+    The installation prompt might be blocked by system settings.
+    
+    **Solution:**
+    1. Check that "Unknown sources" is enabled for SmartTube
+    2. On newer Android versions, this is per-app:
+       - Go to _Settings > Apps > Special app access > Install unknown apps_
+       - Find the app you used to install SmartTube and enable it
+    3. Try the update again
+  </Accordion>
+  
+  <Accordion title="Update Downloaded but Won't Install">
+    If the download completes but installation fails:
+    
+    **Solution:**
+    1. Restart your Android TV device
+    2. Clear SmartTube's cache:
+       - Go to _Settings > Apps > SmartTube > Clear cache_
+    3. Try updating again
+    4. If still failing, manually download and install the latest version from the official sources
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+Never download SmartTube updates from third-party app stores or APK websites. Only use:
+- The built-in updater
+- Official GitHub releases: [github.com/yuliskov/SmartTube/releases](https://github.com/yuliskov/SmartTube/releases/)
+- Official download links: `kutt.it/stn_beta` or `kutt.it/stn_stable`
+</Warning>
+
+## Update Caution Notices
+
+Some updates may include a note saying:
+
+> "Don't update if satisfied with the current version"
+
+**What this means:**
+
+These updates change significant amounts of code to fix bugs affecting only a few users or specific devices. If you're not experiencing issues:
+
+- **Affected users should update** - the changes target their specific problems
+- **Everyone else** - there's no benefit to updating, and a small risk of new bugs
+- **Updated anyway?** - Don't worry, you'll be fine
+
+<Tip>
+If an update is marked as targeting specific issues and you're not affected, you can safely skip it and wait for the next regular update.
+</Tip>
+
+## Switching Release Channels
+
+SmartTube offers two release channels:
+
+- **Beta**: Gets new features and bugfixes faster (recommended)
+- **Stable**: More thoroughly tested, fewer updates
+
+To switch channels, you need to install the other version:
+
+1. Download the desired version:
+   - Beta: `kutt.it/stn_beta`
+   - Stable: `kutt.it/stn_stable`
+2. Install it over your existing installation
+3. Your settings and data will be preserved
+
+<Info>
+See the [Installation guide](/installation) for detailed instructions on downloading and installing SmartTube.
+</Info>

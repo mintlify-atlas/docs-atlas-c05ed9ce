@@ -1,0 +1,383 @@
+---
+title: "Advanced Playback Features"
+description: "Experience high-quality playback with adjustable speed, 8K support, 60fps, HDR, and modern video codecs"
+---
+
+SmartTube offers advanced playback capabilities that rival and often exceed the official YouTube app on Android TV.
+
+## Adjustable Playback Speed
+
+<Info>
+Control how fast or slow videos play - perfect for tutorials, lectures, or when you're short on time.
+</Info>
+
+### How to Adjust Speed
+
+<Steps>
+  <Step title="Open Speed Controls">
+    While watching a video, look for the **speed indicator icon** (gauge/speedometer) in the top row of the player controls.
+  </Step>
+  
+  <Step title="Select Your Speed">
+    Click the icon to open the speed selection menu. Choose from various preset speeds:
+    - **0.25x** - Quarter speed (extreme slow motion)
+    - **0.5x** - Half speed (slow)
+    - **0.75x** - Three-quarter speed
+    - **Normal** - Original speed (1.0x)
+    - **1.25x** - Slightly faster
+    - **1.5x** - One and a half times faster
+    - **1.75x** - Nearly double speed
+    - **2.0x** - Double speed
+    - And more options available
+  </Step>
+  
+  <Step title="Speed Persists">
+    Your selected speed is **remembered across videos**, so you don't need to adjust it every time.
+  </Step>
+</Steps>
+
+<Note>
+Some playback speeds may cause frame drops on certain devices. This is a known limitation of the underlying video decoder.
+</Note>
+
+### Use Cases
+
+<CardGroup cols={2}>
+  <Card title="Educational Content" icon="graduation-cap">
+    Watch tutorials and lectures at 1.5x or 2x to save time while still absorbing information.
+  </Card>
+  
+  <Card title="Slow Motion Analysis" icon="magnifying-glass">
+    Use 0.25x or 0.5x speed to study detailed movements in sports, dance, or technical demonstrations.
+  </Card>
+  
+  <Card title="Language Learning" icon="language">
+    Slow down videos to 0.75x to better understand foreign language content or fast speakers.
+  </Card>
+  
+  <Card title="Music Practice" icon="music">
+    Slow down music tutorials to learn difficult passages at your own pace.
+  </Card>
+</CardGroup>
+
+## High Resolution Support
+
+SmartTube supports the highest quality video resolutions available on YouTube.
+
+### Resolution Options
+
+- **8K (4320p)** - Ultra-high definition (if available and supported by your device)
+- **4K/UHD (2160p)** - Four times 1080p resolution
+- **1440p** - 2K resolution
+- **1080p** - Full HD (standard high quality)
+- **720p** - HD
+- **480p** - Standard definition
+- **360p and lower** - Lower quality options for slower connections
+
+<Warning>
+Your actual viewing quality depends on:
+- Video availability (not all videos are uploaded in 8K)
+- Your TV's display capabilities
+- Your device's hardware support
+- Your internet bandwidth
+</Warning>
+
+### 8K Resolution Support
+
+<Info>
+SmartTube supports **8K resolution** playback on compatible devices.
+</Info>
+
+**Requirements for 8K:**
+- TV or display with 8K support (7680 x 4320 pixels)
+- Android TV device with 8K video decoding capability
+- HDMI 2.1 cable (for external devices)
+- Sufficient internet bandwidth (typically 50+ Mbps)
+- Video must be available in 8K on YouTube
+
+**Current 8K Reality:**
+- Very few devices currently support 8K playback
+- Limited 8K content available on YouTube
+- Requires significant bandwidth
+- Most users will use 4K as the maximum quality
+
+## 60fps Support
+
+<Tip>
+SmartTube fully supports **60fps (frames per second)** playback for smoother motion.
+</Tip>
+
+### Benefits of 60fps
+
+- **Smoother motion** - especially noticeable in gaming, sports, and action content
+- **Reduced motion blur** - clearer fast-moving subjects
+- **More immersive** - closer to real-life motion
+
+### When to Use 60fps
+
+**Great for:**
+- Gaming videos and streams
+- Sports highlights
+- Action-packed content
+- Tech reviews with camera panning
+- Dance and movement
+
+**Less important for:**
+- Talking head videos
+- Vlogs
+- Static content
+- Tutorials with minimal motion
+
+<Note>
+If you don't notice or mind the difference, you can save bandwidth by choosing non-60fps versions. Both provide the same resolution, just different frame rates.
+</Note>
+
+## Video Codec Support
+
+SmartTube supports modern video codecs for optimal quality and bandwidth efficiency.
+
+### Available Codecs
+
+<AccordionGroup>
+  <Accordion title="AV1 (AV01) - Best Compression" icon="star">
+    **The newest and most efficient codec**
+    
+    **Advantages:**
+    - Best compression (lowest bitrate for same quality)
+    - Best for limited bandwidth
+    - Saves the most data
+    - Environmentally friendly (less data transfer)
+    
+    **Disadvantages:**
+    - Requires hardware support (devices from 2020+)
+    - Not supported on most TVs and TV boxes
+    - May not play at all without hardware support
+    
+    **Recommendation:** Use if your device supports it (check if AV1 videos play smoothly)
+    
+    **Example bitrate:** ~1.6 Mbps for 1080p @ 25fps
+  </Accordion>
+  
+  <Accordion title="VP9 - Best Choice for Most Devices" icon="check">
+    **Modern codec with excellent efficiency**
+    
+    **Advantages:**
+    - Better compression than AVC
+    - Supported on most devices since 2015
+    - Good balance of quality and compatibility
+    - Works smoothly with hardware support
+    
+    **Disadvantages:**
+    - Older/cheaper devices may struggle without hardware support
+    - Not as efficient as AV1
+    
+    **Recommendation:** **Best choice for most devices** - widely supported with good efficiency
+    
+    **Example bitrate:** ~2.1 Mbps for 1080p @ 25fps
+  </Accordion>
+  
+  <Accordion title="AVC (H.264) - Maximum Compatibility" icon="mobile">
+    **Older codec with universal support**
+    
+    **Advantages:**
+    - Supported on ALL devices
+    - Guaranteed smooth playback
+    - No hardware requirements
+    
+    **Disadvantages:**
+    - Least efficient (highest bitrate)
+    - Uses more bandwidth
+    - Larger file sizes
+    
+    **Recommendation:** Only use for old or slow hardware that struggles with VP9
+    
+    **Example bitrate:** ~2.7 Mbps for 1080p @ 25fps
+  </Accordion>
+</AccordionGroup>
+
+### Understanding Bitrate vs Quality
+
+<Warning>
+**Lower bitrate is BETTER with modern codecs!**
+
+Do not confuse bitrate with quality. YouTube targets the same quality regardless of codec.
+</Warning>
+
+At the same resolution:
+- **Newer codecs** = lower bitrate = **same quality** = less bandwidth
+- **Older codecs** = higher bitrate = **same quality** = more bandwidth
+
+You should use the **newest codec your device supports**, not the one with the highest bitrate.
+
+**Why lower bitrate is better:**
+- Uses less bandwidth
+- Reduces internet costs (if you have data caps)
+- More environmentally friendly
+- Faster buffering
+- Smoother playback on slower connections
+
+### How to Select Codec
+
+<Steps>
+  <Step title="Open Video Quality Menu">
+    While watching a video, press the **HQ button** in the bottom-left corner.
+  </Step>
+  
+  <Step title="Select Video Formats">
+    Choose **"Video formats"** from the menu.
+  </Step>
+  
+  <Step title="Choose Your Codec">
+    Select your preferred codec:
+    - Try AV01 first (if available)
+    - Fall back to VP9 if AV01 doesn't work
+    - Use AVC only if VP9 struggles
+  </Step>
+</Steps>
+
+## HDR Support
+
+<Info>
+SmartTube supports **HDR (High Dynamic Range)** playback for enhanced color and contrast - **if your hardware supports it**.
+</Info>
+
+### HDR Requirements
+
+HDR is complicated and requires **ALL** of the following:
+
+<Steps>
+  <Step title="HDR-Compatible TV">
+    Your TV must support HDR (check your TV's specifications for HDR10, Dolby Vision, etc.).
+  </Step>
+  
+  <Step title="HDR-Compatible Device">
+    If using an external device (TV box, Fire Stick, etc.), it must support HDR output.
+  </Step>
+  
+  <Step title="HDR-Compatible Cable">
+    Your HDMI cable must support HDR. Yes, different HDMI versions have different capabilities:
+    - HDMI 2.0a or higher for HDR10
+    - HDMI 2.1 for advanced HDR formats
+  </Step>
+  
+  <Step title="Compatible HDR Format">
+    The device must support YouTube's specific HDR format. Some devices (like **NVIDIA Shield**) support HDR but **not** YouTube's HDR format.
+  </Step>
+</Steps>
+
+<Warning>
+**NVIDIA Shield** does not support YouTube's HDR format, despite having general HDR support.
+</Warning>
+
+### Troubleshooting HDR
+
+**If HDR videos look dim or washed out:**
+- Your TV's HDR mode may need adjustment
+- Check your TV's picture settings
+- See [this guide from WIRED](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/)
+
+**If HDR is not working at all:**
+- Verify all hardware supports HDR (TV, device, cable)
+- Check device-specific HDR guides online
+- It's probably not SmartTube's fault - it's a hardware limitation
+
+## Auto Frame Rate (AFR)
+
+<Info>
+AFR automatically adjusts your TV's refresh rate to match the video's frame rate for slightly smoother playback.
+</Info>
+
+### What is AFR?
+
+**Auto Frame Rate** matches your display's refresh rate to the content:
+- 24fps video → 24Hz display
+- 30fps video → 30Hz display  
+- 60fps video → 60Hz display
+
+**Benefits:**
+- Slight improvement in motion smoothness
+- Reduces judder in some content
+- More "cinematic" feel for 24fps content
+
+**Drawbacks:**
+- Very small difference (most people barely notice)
+- May cause screen flickering on some devices
+- Brief black screen when switching frame rates
+- Doesn't work well on all hardware
+
+<Note>
+Recommendation: Try it out to see if it works on your device. If it causes issues or you don't notice a difference, turn it **off**.
+</Note>
+
+## Buffering Settings
+
+<Tip>
+Adjust your buffer settings to optimize playback for your connection and device.
+</Tip>
+
+### High Buffer vs Low Buffer
+
+**High Buffer (Recommended):**
+- Preloads more video ahead of your current position
+- Smooths out network fluctuations
+- Prevents pauses due to buffering
+- Higher RAM usage (usually not an issue)
+- **Best for:** Stable viewing experience
+
+**Low Buffer:**
+- Minimal preloading
+- Slightly reduced bandwidth if you skip around frequently
+- May pause more often on unstable connections
+- Lower RAM usage
+- **Best for:** Limited RAM devices (rare)
+
+<Note>
+Buffer is cleared when seeking backward, so you'll need to rebuffer. This may be improved in future updates.
+</Note>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Why do some speeds cause frame skipping?">
+    Frame drops at certain speeds are caused by limitations in the underlying video decoder. This is a known issue that's difficult to fix at the app level. Try different speeds to find which work best on your device.
+  </Accordion>
+  
+  <Accordion title="Can I set a default quality?">
+    Yes! Go to **Settings > Video Player > Video Presets** and select your preferred default quality. SmartTube will use it when available, or the next best option if not.
+  </Accordion>
+  
+  <Accordion title="Why doesn't it auto-select quality based on bandwidth?">
+    Automatic quality selection based on bandwidth is planned but not yet available. For now, set a maximum quality preset that your bandwidth can handle.
+  </Accordion>
+  
+  <Accordion title="The debug info says 1080p but I have a 4K TV!">
+    Don't worry - the debug information is often incorrect about display resolution. SmartTube works fine with 4K and above. Just play a 4K video to verify.
+  </Accordion>
+  
+  <Accordion title="Which codec should I choose?">
+    Try this order:
+    1. **AV01** (if your device is from 2020 or later)
+    2. **VP9** (best for most devices from 2015+)
+    3. **AVC** (only if VP9 is slow or stuttering)
+  </Accordion>
+</AccordionGroup>
+
+## Performance Tips
+
+<CardGroup cols={2}>
+  <Card title="Choose the Right Codec" icon="microchip">
+    Use the newest codec your device supports smoothly. This reduces bandwidth and improves performance.
+  </Card>
+  
+  <Card title="Match Your Display" icon="tv">
+    Don't select resolutions far beyond your TV's capabilities. A 1080p TV won't benefit much from 4K.
+  </Card>
+  
+  <Card title="Consider Your Bandwidth" icon="wifi">
+    Use [fast.com](https://fast.com) to test your speed, then choose a quality that's comfortably within your bandwidth.
+  </Card>
+  
+  <Card title="High Buffer" icon="database">
+    Keep buffer settings on high unless you have very limited RAM (unlikely on modern devices).
+  </Card>
+</CardGroup>

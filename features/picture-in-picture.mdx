@@ -1,0 +1,382 @@
+---
+title: "Picture-in-Picture (PiP)"
+description: "Watch videos in a floating window while using other apps on your Android TV"
+---
+
+SmartTube supports Picture-in-Picture (PiP) mode, allowing you to watch videos in a small floating window while using other apps on your Android TV.
+
+## What is Picture-in-Picture?
+
+<Info>
+Picture-in-Picture lets you continue watching a video in a small window while navigating to other apps or the home screen.
+</Info>
+
+PiP mode creates a floating video window that stays on top of other content, allowing you to:
+
+- **Multitask** - Browse other apps while watching
+- **Stay informed** - Keep videos playing while checking notifications
+- **Background viewing** - Continue watching without the full app interface
+
+<Note>
+Picture-in-Picture is a standard Android feature that SmartTube integrates with. Your TV must support PiP (Android 8.0 Oreo or higher).
+</Note>
+
+## Enabling Picture-in-Picture
+
+PiP is not enabled by default. Follow these steps to activate it:
+
+<Steps>
+  <Step title="Open SmartTube Settings">
+    Launch SmartTube and navigate to the **Settings** menu (gear icon).
+  </Step>
+  
+  <Step title="Navigate to General Settings">
+    Select **"General"** from the settings menu.
+  </Step>
+  
+  <Step title="Find Background Playback">
+    Scroll down to **"Background playback"** section.
+  </Step>
+  
+  <Step title="Enable Picture in Picture">
+    Toggle on **"Picture in picture"** mode.
+    
+    This enables PiP when you press the Home button during video playback.
+  </Step>
+  
+  <Step title="Optional: Enable on Back Button">
+    In the same section, find **"Background playback (activation)"**.
+    
+    Enable this to also trigger PiP when you press the **Back** button during playback.
+  </Step>
+</Steps>
+
+<Tip>
+The setting path is: **Settings > General > Background playback > Picture in picture**
+</Tip>
+
+## How to Use Picture-in-Picture
+
+Once enabled, activating PiP is simple:
+
+### Method 1: Home Button (Default)
+
+<Steps>
+  <Step title="Start Playing a Video">
+    Open any video in SmartTube and start playback.
+  </Step>
+  
+  <Step title="Press Home">
+    Press the **Home** button on your remote while the video is playing.
+  </Step>
+  
+  <Step title="Video Enters PiP Mode">
+    The video shrinks into a floating window and continues playing while you navigate your TV's home screen or other apps.
+  </Step>
+</Steps>
+
+### Method 2: Back Button (Optional)
+
+<Steps>
+  <Step title="Enable in Settings">
+    Make sure you've enabled **"Background playback (activation)"** in Settings.
+  </Step>
+  
+  <Step title="Press Back">
+    During video playback, press the **Back** button on your remote.
+  </Step>
+  
+  <Step title="Video Enters PiP Mode">
+    The video enters PiP mode instead of going back to the previous screen.
+  </Step>
+</Steps>
+
+<Warning>
+If you enable PiP activation on the Back button, pressing Back will no longer navigate to the previous screen during playback - it will always trigger PiP instead.
+</Warning>
+
+## Controlling PiP Window
+
+Once in PiP mode, you can control the video:
+
+### Playback Controls
+
+- **Play/Pause** - Click on the PiP window
+- **Close PiP** - Press the close button (X) on the PiP window
+- **Return to Full Screen** - Click on the PiP window and select expand
+
+### Window Position
+
+On most Android TV devices:
+- **Move the window** - Use directional buttons to reposition
+- **Resize** - Some devices allow resizing (limited support)
+- **Corners** - Typically snaps to screen corners
+
+<Note>
+PiP window controls vary by device and Android version. Not all features may be available on your TV.
+</Note>
+
+## Use Cases
+
+Picture-in-Picture is perfect for:
+
+<CardGroup cols={2}>
+  <Card title="Music While Browsing" icon="music">
+    Keep music videos or playlists playing while browsing for your next video or using other apps.
+  </Card>
+  
+  <Card title="News & Live Streams" icon="newspaper">
+    Watch news or live streams in the corner while checking other apps or browsing.
+  </Card>
+  
+  <Card title="Tutorial Videos" icon="chalkboard-teacher">
+    Follow along with tutorials while taking notes or using other apps.
+  </Card>
+  
+  <Card title="Sports Highlights" icon="football">
+    Keep sports content playing while checking scores or schedules in other apps.
+  </Card>
+  
+  <Card title="Podcasts & Talks" icon="podcast">
+    Listen to podcasts or talks while doing other tasks on your TV.
+  </Card>
+  
+  <Card title="Background Entertainment" icon="tv">
+    Keep entertainment going while navigating menus or settings.
+  </Card>
+</CardGroup>
+
+## Configuration Options
+
+### Background Playback Settings
+
+SmartTube offers several background playback configurations:
+
+<AccordionGroup>
+  <Accordion title="Picture in Picture (Main Setting)">
+    **Location:** Settings > General > Background playback > Picture in picture
+    
+    **What it does:** Enables PiP mode when pressing Home during video playback.
+    
+    **Recommended:** Enable for PiP functionality
+  </Accordion>
+  
+  <Accordion title="Background Playback Activation">
+    **Location:** Settings > General > Background playback (activation)
+    
+    **What it does:** Controls which button triggers PiP mode.
+    
+    **Options:**
+    - Home button only (default)
+    - Back button only
+    - Both Home and Back buttons
+    
+    **Recommended:** Home button only (to preserve Back button's normal function)
+  </Accordion>
+  
+  <Accordion title="Audio-Only Background Playback">
+    **Alternative to PiP:** If you don't want the video window but want audio to continue:
+    
+    **Location:** Settings > General > Background playback
+    
+    **What it does:** Continues audio playback without a video window when you leave the app.
+    
+    **Use case:** Perfect for music or podcasts where you don't need to see the video.
+  </Accordion>
+</AccordionGroup>
+
+## Limitations
+
+<Warning>
+Picture-in-Picture has some limitations depending on your device:
+</Warning>
+
+### Device Compatibility
+
+- **Requires Android 8.0+** (Oreo or higher)
+- **Not all Android TVs support PiP** - some manufacturers disable it
+- **Feature availability varies** by device manufacturer and model
+
+### Functional Limitations
+
+- **Limited window control** - position and size options depend on your TV
+- **No quality adjustment** - video quality is maintained from full-screen mode
+- **Single window only** - cannot have multiple PiP windows
+- **May pause in some apps** - certain apps may interfere with PiP playback
+
+### Performance Considerations
+
+<Note>
+PiP mode requires your TV to:
+- Decode video while running other apps
+- Maintain multiple apps in memory
+- Render the floating window overlay
+
+Older or less powerful devices may experience performance issues.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="PiP mode doesn't activate">
+    **Possible causes and solutions:**
+    
+    1. **PiP not enabled in SmartTube**
+       - Check Settings > General > Background playback > Picture in picture
+    
+    2. **Device doesn't support PiP**
+       - Verify your TV is running Android 8.0 or higher
+       - Some manufacturers disable PiP - check your TV's documentation
+    
+    3. **System PiP permissions**
+       - Some devices require system-level PiP permission
+       - Check TV Settings > Apps > SmartTube > Permissions
+  </Accordion>
+  
+  <Accordion title="Video stops when entering PiP">
+    **Try these solutions:**
+    
+    1. **Check background playback settings**
+       - Ensure audio background playback isn't conflicting
+    
+    2. **Device memory issues**
+       - Close other apps to free up RAM
+       - Restart SmartTube
+    
+    3. **System restrictions**
+       - Check if your TV has battery/performance modes that limit PiP
+  </Accordion>
+  
+  <Accordion title="Can't control PiP window">
+    **Control options vary by device:**
+    
+    1. **Try different buttons**
+       - Navigate: D-pad/arrow keys
+       - Play/Pause: OK/Select button
+       - Close: Back or Menu button
+    
+    2. **Device-specific controls**
+       - Check your TV's manual for PiP controls
+       - Some TVs have dedicated PiP buttons on remote
+    
+    3. **Return to full screen**
+       - Usually: Click on the PiP window and select expand
+       - Or: Reopen SmartTube from launcher
+  </Accordion>
+  
+  <Accordion title="PiP window is too small/large">
+    **Window size is typically controlled by Android TV:**
+    
+    1. **System default size**
+       - Most devices use a fixed PiP window size
+       - SmartTube cannot override this
+    
+    2. **Check TV settings**
+       - Some TVs allow PiP size adjustment in system settings
+       - Look in Display or Accessibility settings
+    
+    3. **Device limitation**
+       - Window size may be fixed on your device
+       - This is a hardware/OS limitation, not a SmartTube issue
+  </Accordion>
+  
+  <Accordion title="Back button triggers PiP instead of going back">
+    **This is by design if you enabled it:**
+    
+    1. **Disable Back button PiP activation**
+       - Go to Settings > General > Background playback (activation)
+       - Change to "Home button only"
+    
+    2. **Use Home button instead**
+       - Keep Back button for navigation
+       - Use Home button to trigger PiP
+  </Accordion>
+</AccordionGroup>
+
+## PiP vs Audio Background Playback
+
+<Info>
+SmartTube offers two types of background playback. Choose based on your needs:
+</Info>
+
+| Feature | Picture-in-Picture | Audio Background Playback |
+|---------|-------------------|---------------------------|
+| **Video visible** | ✅ Small window | ❌ No video |
+| **Audio continues** | ✅ Yes | ✅ Yes |
+| **Device requirements** | Android 8.0+ | Any version |
+| **Performance impact** | Higher | Lower |
+| **Best for** | Multitasking with video | Music, podcasts |
+| **Screen overlay** | ✅ Floating window | ❌ None |
+
+<Tip>
+For music videos or podcasts where you don't need to see the video, **audio background playback** uses less resources than PiP.
+</Tip>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Does PiP work with all videos?">
+    Yes, PiP works with all videos that play in SmartTube, including:
+    - Regular videos
+    - Live streams
+    - Music videos
+    - Playlists
+    - Age-restricted content (if logged in)
+  </Accordion>
+  
+  <Accordion title="Can I use PiP while gaming on my TV?">
+    This depends on your TV and the game. PiP is an Android system feature that should work across apps, but:
+    - Some games may pause PiP
+    - Performance may suffer with both running
+    - Android games typically support PiP
+    - Native TV games may not
+  </Accordion>
+  
+  <Accordion title="Does PiP use more battery/power?">
+    Yes, PiP uses more resources than audio-only playback because:
+    - Video decoding continues
+    - Multiple apps run simultaneously
+    - Display renders additional layers
+    
+    However, on plugged-in TVs, this is rarely a concern.
+  </Accordion>
+  
+  <Accordion title="Can I adjust PiP quality to save bandwidth?">
+    PiP inherits the quality settings from your full-screen playback. The quality doesn't automatically reduce in PiP mode. To save bandwidth:
+    - Lower video quality before entering PiP
+    - Use audio background playback instead
+  </Accordion>
+  
+  <Accordion title="Why doesn't my TV support PiP?">
+    Some Android TV manufacturers disable PiP because:
+    - Hardware limitations on older/cheaper models
+    - Manufacturer customization choices
+    - Regional firmware differences
+    
+    Check your TV's system settings or manual for PiP availability.
+  </Accordion>
+</AccordionGroup>
+
+## Tips for Best Experience
+
+<CardGroup cols={2}>
+  <Card title="Use with Music" icon="music">
+    PiP is perfect for keeping music videos playing while browsing for your next song.
+  </Card>
+  
+  <Card title="Home Button Only" icon="house">
+    Keep Back button PiP disabled to preserve normal navigation behavior.
+  </Card>
+  
+  <Card title="Close Background Apps" icon="window-close">
+    Free up RAM by closing unused apps for better PiP performance.
+  </Card>
+  
+  <Card title="Audio for Podcasts" icon="podcast">
+    For podcasts and talks, consider audio background playback instead of PiP to save resources.
+  </Card>
+</CardGroup>
+
+<Tip>
+Experiment with PiP to find your preferred workflow! Some users love it for multitasking, while others prefer full-screen focus or audio-only playback.
+</Tip>

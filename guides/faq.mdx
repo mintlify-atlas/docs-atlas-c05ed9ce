@@ -1,0 +1,526 @@
+---
+title: Frequently Asked Questions
+description: Comprehensive FAQ covering common questions about SmartTube features, installation, video playback, and troubleshooting
+---
+
+Before asking for help, please search this FAQ using your browser's search function (Ctrl+F or ⌘F).
+
+## Installation & Updates
+
+<AccordionGroup>
+  <Accordion title="Can updates be installed automatically?">
+    **No**, automatic installation is technically not possible.
+    
+    Only the preinstalled app manager (Google PlayStore, Amazon AppStore, etc.) has the required system permission to install apps silently. All other apps, including SmartTube, can only show an installation prompt that requires user confirmation.
+    
+    A workaround using root would be possible but hasn't been implemented yet.
+    
+    **What SmartTube CAN do:**
+    - Automatically check for updates
+    - Notify you when updates are available
+    - Download the update file
+    - Open the installation prompt (you must confirm)
+    
+    See the [Updating guide](/guides/updating) for more details.
+  </Accordion>
+  
+  <Accordion title="Why do some updates say 'don't update if satisfied'?">
+    These updates change significant amounts of code to fix bugs that only affect a few users or specific devices.
+    
+    **For affected users:** Update to fix your specific issues  
+    **For everyone else:** No benefit to updating, small risk of new bugs  
+    **Updated anyway?** Don't worry, you'll be fine
+    
+    If you're not experiencing issues and the changelog mentions device-specific fixes, you can safely skip that update and wait for the next regular release.
+  </Accordion>
+  
+  <Accordion title="Can I install SmartTube on Samsung/LG TV, Roku, iOS?">
+    **No**, SmartTube only works on **Android** devices.
+    
+    **Not compatible with:**
+    - Samsung Tizen TVs
+    - LG webOS TVs
+    - Roku devices
+    - iOS / Apple TV
+    - Any non-Android platform
+    
+    The app cannot easily be ported to other platforms and there are no plans to do so. **Please do not ask.**
+    
+    **Solution:** Connect an Android TV stick or box to your TV:
+    - Chromecast with Google TV
+    - Amazon Fire TV Stick
+    - Xiaomi Mi Box
+    - Generic Android TV boxes
+    
+    See [Device-Specific Setup](/guides/device-specific) for more information.
+  </Accordion>
+</AccordionGroup>
+
+## Video Playback & Quality
+
+<AccordionGroup>
+  <Accordion title="Videos buffer a LOT - how do I fix this?">
+    Buffering issues affect many unofficial YouTube apps, likely due to YouTube server-side behavior.
+    
+    **Best solution: Use encrypted DNS**
+    
+    Switch to encrypted DNS like NextDNS:
+    
+    **Automatic setup:**
+    1. Install [Intra from F-Droid](https://f-droid.org/en/packages/app.intra/)
+    2. Install ["AutoStart - No root"](https://play.google.com/store/apps/details?id=com.autostart) to make it autolaunch
+    
+    **Manual setup:**
+    Follow [this Reddit guide](https://www.reddit.com/r/MiBox/s/7esEVGtAAa)
+    
+    **Other solutions:**
+    - Reduce resolution or change it back
+    - Change video format to AVC
+    - Increase buffer in settings (recommended: High)
+    - Hit back button and replay the video
+    
+    See [Troubleshooting](/guides/troubleshooting) for complete solutions.
+  </Accordion>
+  
+  <Accordion title="Why doesn't it auto-select the highest quality?">
+    **It does** (by default).
+    
+    If you set a _video profile_ under settings, that acts as a **maximum** for automatic selection.
+    
+    **Check your settings:**
+    1. Go to _Settings > Video player > Video presets_
+    2. If you selected a specific preset, that's your maximum quality
+    3. Choose **"none"** to let SmartTube select the highest available quality
+    
+    <Warning>
+    Do not confuse **quality** with **bitrate**. Lower bitrate with newer codecs = same quality, better compression. See the codec question below.
+    </Warning>
+  </Accordion>
+  
+  <Accordion title="Can I set a default resolution / maximum quality?">
+    Yes! SmartTube automatically selects the highest available quality, up to a maximum you set.
+    
+    **How to set default resolution:**
+    1. Go to _Settings > Video player > Video presets_
+    2. Select your preferred maximum (e.g., 1080p, 1440p, 4K)
+    3. SmartTube will pick this or the next best available option
+    4. You can still change quality manually in each video
+    
+    **Special option:**
+    - **"None"**: Remembers your last selection in the video player (no default)
+    
+    See [Video Quality guide](/configuration/video-quality) for details.
+  </Accordion>
+  
+  <Accordion title="Can it set resolution to 'auto' based on bandwidth?">
+    This is **planned but not yet available**.
+    
+    For now, set a maximum resolution in settings that your bandwidth can handle. Test your speed at [fast.com](https://fast.com) to determine the right setting.
+    
+    **Bandwidth recommendations:**
+    - 5+ Mbps: 1080p
+    - 15+ Mbps: 1440p or 4K
+    - 25+ Mbps: 4K 60fps
+  </Accordion>
+  
+  <Accordion title="Which codec should I choose: AV01, VP9, or AVC?">
+    **Best choice for most devices: VP9**
+    
+    | Codec | Recommendation | Hardware Support | Compression |
+    |-------|---------------|------------------|-------------|
+    | **AV01** | Best if supported | Devices from 2020+ | Best (lowest bitrate) |
+    | **VP9** | **Recommended for most** | Most devices since 2015 | Better |
+    | **AVC** | Old/slow hardware only | All devices | Good (highest bitrate) |
+    
+    **Important:** At the same resolution, **lower bitrate is better** with newer codecs. YouTube targets the same quality regardless of codec. Older codecs have higher bitrate only because they're less efficient.
+    
+    **Use the newest codec your device supports**, not the one with highest bitrate.
+    
+    See [Video Codecs guide](/configuration/video-codecs) for complete explanation.
+  </Accordion>
+  
+  <Accordion title="AV01 doesn't play / VP9 is slow - why?">
+    **AV01:** Most TVs and TV boxes do NOT support AV01 because it's very new (2020+). Your device probably cannot play AV01 at all.
+    
+    **VP9:** Requires hardware support for smooth playback. Cheap TV boxes without official 4K support will struggle with VP9 at high resolutions.
+    
+    **Solution:**
+    1. Press the **HQ** button (bottom-left)
+    2. Select **Video formats**
+    3. Choose **VP9** (if AV01 doesn't work) or **AVC** (if VP9 is slow)
+    
+    If your device has hardware support for a codec, it should play smoothly. Without hardware support, even powerful CPUs may struggle.
+    
+    <Info>
+    Fixing AV01 without hardware support is technically possible but not currently planned.
+    </Info>
+  </Accordion>
+  
+  <Accordion title="Does HDR work?">
+    Yes, HDR works **if your hardware supports it**.
+    
+    **Requirements (all must be met):**
+    - Your TV must support HDR
+    - Your TV box (if using one) must support HDR
+    - Your HDMI cable must support HDR (yes, there are different versions!)
+    - The specific HDR format must be supported
+    
+    **Known limitation:**
+    - **NVIDIA Shield** supports HDR generally, but **NOT** YouTube's specific HDR format
+    
+    **If HDR looks dim or washed out:**
+    Check [this Wired article](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/) for display settings.
+    
+    **If HDR isn't working:**
+    It's probably not SmartTube's fault. Search the web for "HDR" + your device name.
+    
+    See [HDR documentation](/configuration/hdr) for more details.
+  </Accordion>
+  
+  <Accordion title="Debug info says 1080p but I have 4K display!">
+    **Don't worry - the debug information is incorrect.**
+    
+    SmartTube works fine above 1080p. You can verify this by playing a 4K video - it will display in 4K.
+    
+    Also don't worry if it says "720p" when you have a 1080p display. This is a display detection bug that doesn't affect actual video playback quality.
+  </Accordion>
+</AccordionGroup>
+
+## Features & Functionality
+
+<AccordionGroup>
+  <Accordion title="Why does it skip video segments?">
+    SmartTube has **SponsorBlock** integration, which can automatically skip sponsored segments and other categories.
+    
+    **What it skips (configurable):**
+    - Sponsor segments
+    - Intros
+    - Outros
+    - Reminders to subscribe
+    - Non-music portions in music videos
+    - Intermissions/breaks
+    
+    **To configure or disable:**
+    1. Go to _Settings > SponsorBlock_
+    2. Select which categories to skip
+    3. Choose skip behavior (auto-skip, show button, or ignore)
+    
+    SponsorBlock is crowdsourced and voluntary - it won't work 100% of the time, but covers most popular videos.
+    
+    See [SponsorBlock documentation](/features/sponsorblock) for details.
+  </Accordion>
+  
+  <Accordion title="How do I start next video automatically / stop after each video?">
+    Use the **loop button** 🔁 in the video player to cycle between autoplay modes:
+    
+    - **Autoplay on**: Automatically plays next video
+    - **Repeat one**: Loops current video
+    - **Autoplay off**: Stops after each video
+    
+    The loop button is visible in the player controls.
+  </Accordion>
+  
+  <Accordion title="It doesn't show up on my casting list - why?">
+    Unlike the official YouTube app, SmartTube does **not** automatically appear on your network.
+    
+    **You must manually link your devices:**
+    
+    <Steps>
+      <Step title="Open SmartTube Settings">
+        Open SmartTube on your TV and go to settings
+      </Step>
+      
+      <Step title="Get TV Code">
+        Go to **Remote control** (2nd option) and note the code
+      </Step>
+      
+      <Step title="Link Your Phone">
+        1. Open YouTube app on your phone
+        2. Go to _Settings > General > Watch on TV_
+        3. Click **Connect using TV code**
+        4. Enter the code from your TV
+      </Step>
+    </Steps>
+    
+    **Important limitation:** You must open SmartTube on the TV before casting. SmartTube cannot automatically wake up the TV.
+    
+    See [Casting guide](/features/casting) with screenshots.
+  </Accordion>
+  
+  <Accordion title="What is AFR and should I enable it?">
+    **AFR = Auto Frame Rate**
+    
+    It adjusts your TV's refresh rate to match the video content (e.g., 24fps, 30fps, 60fps).
+    
+    **Benefits:**
+    - Slightly smoother playback
+    - Eliminates judder on some displays
+    
+    **Drawbacks:**
+    - Doesn't work well on all hardware
+    - May cause brief screen blanking when switching
+    - Most people barely notice the difference
+    
+    **Recommendation:**
+    - Turn it **on** to test if it works on your device
+    - Turn it **off** if it causes issues or you don't notice improvement
+    
+    If you don't know what it does, you can safely keep it off.
+  </Accordion>
+  
+  <Accordion title="Should I choose high or low buffer?">
+    **Recommendation: High**
+    
+    **Higher buffer:**
+    ✅ Preloads more video ahead  
+    ✅ Smooths out network issues  
+    ✅ Prevents buffering pauses  
+    ✅ Minimal RAM usage increase  
+    
+    **Lower buffer:**
+    - Slightly reduces bandwidth if you often close videos early
+    - Not recommended unless you have severe RAM constraints
+    
+    Set buffer size in _Settings > Video player > Buffer size_.
+  </Accordion>
+  
+  <Accordion title="Can I retain buffer when seeking backwards?">
+    **No**, when you seek backwards (jump back 5 seconds), SmartTube must rebuffer.
+    
+    This may be improved in a future update.
+    
+    **Workaround:**
+    - Use high buffer setting to reduce rebuffering time
+    - Minimize seeking backwards when possible
+  </Accordion>
+  
+  <Accordion title="Frames skip when playing at different speeds!">
+    This is a **known issue** that currently cannot be fixed.
+    
+    It's a limitation of the video playback engine. Some playback speeds cause frame drops.
+    
+    **Workaround:** Use normal playback speed (1x) for smooth playback.
+  </Accordion>
+  
+  <Accordion title="Can I download videos?">
+    **No**, not with SmartTube.
+    
+    SmartTube is designed for streaming playback only. If you need video downloads, use other tools on different platforms.
+  </Accordion>
+</AccordionGroup>
+
+## User Interface & Experience
+
+<AccordionGroup>
+  <Accordion title="Can you make SmartTube look like the official app?">
+    The official YouTube and YouTube Kids UIs are far ahead of SmartTube's interface.
+    
+    **Why it's difficult:**
+    - Requires skilled developer(s) dedicated to UI work
+    - Needs long-term maintenance (features, bug fixes)
+    - All done for free (SmartTube is open source)
+    - SmartTube currently follows Google's official Android TV app template
+    
+    **The reality:** It's Google's fault the template is somewhat ugly. 😂
+    
+    **Want to help?** If you're skilled in Android TV UI development and willing to dedicate significant free time, please contribute!
+  </Accordion>
+  
+  <Accordion title="Can the search page be improved?">
+    Yes, it can be, but someone needs to do it (see above FAQ).
+    
+    SmartTube uses:
+    - Google's officially recommended design template for TV apps
+    - The official, preinstalled Android TV keyboard
+    
+    Sadly, Google did a really bad job with the search page and keyboard design.
+    
+    **Future possibility:**
+    Maybe a future update will add an embedded keyboard similar to the official YouTube app. But for now, it is what it is due to:
+    - Lack of development time
+    - Following Google's official (but poor) recommendations
+  </Accordion>
+  
+  <Accordion title="How do I remove unrelated recommended videos?">
+    Recommendations are **defined by YouTube**, not SmartTube. The app cannot change the algorithm.
+    
+    **Recommendations are based on:**
+    - Your country (changeable in settings)
+    - Your watch history (if logged in)
+    - Your user profile data (if logged in)
+    - Whatever else Google uses
+    
+    **If not logged in:**
+    You're in "incognito mode" - watch history doesn't influence recommendations. You'll see generic popular content for your region.
+    
+    **To change:**
+    - Change country in settings
+    - Log in so recommendations are based on your interests
+    - Clear your YouTube watch history in your Google account
+    
+    <Info>
+    Maybe a future version will add optional user profiling without logging in.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Account & Features
+
+<AccordionGroup>
+  <Accordion title="Can I whitelist ads on some channels?">
+    **No**, this is not possible.
+    
+    SmartTube literally does not have any code to display ads. It is programmed to be completely **unable** to show any ads - YouTube cannot slip anything through.
+    
+    Adding this functionality would actually take development time and effort, which is instead spent on:
+    - Adding useful features
+    - Fixing bugs
+    - Improving performance
+    
+    <Info>
+    If you want to support creators, consider YouTube Premium or direct support (Patreon, memberships, etc.).
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Mobile & Other Platforms
+
+<AccordionGroup>
+  <Accordion title="Can I install this on a smartphone?">
+    **Big No.** This app is **not** for smartphones. We offer **zero support** for phones.
+    
+    **Why not:**
+    - Not optimized for portrait mode
+    - Touch scrolling doesn't work properly
+    - UI designed for TV remotes, not touchscreens
+    - There will never be a phone version
+    
+    **Alternatives for smartphones:**
+    - [ReVanced](https://github.com/ReVanced) - full-featured YouTube mod
+    - [NewPipe](https://newpipe.schabi.org) - privacy-focused alternative
+    - [NewPipe x SponsorBlock](https://github.com/polymorphicshade/NewPipe) - NewPipe with SponsorBlock
+    - [Pure Tuber](https://play.google.com/store/apps/details?id=free.tube.premium.advanced.tuber)
+    
+    **What you CAN do:**
+    Cast videos **from** your smartphone **to** a TV/TV box running SmartTube. See [Casting guide](/features/casting).
+  </Accordion>
+  
+  <Accordion title="Can I install on tablet / car screen?">
+    **Maybe**, but with strict requirements:
+    
+    **Requirements:**
+    - Must be an **Android** device
+    - Must have a **large screen**
+    - Must have a **TV remote, controller, or keyboard**
+    
+    **NOT supported:**
+    - Touch input
+    - Mouse/touchpad scrolling
+    - Touchscreen-only use
+    
+    Some users reported great success, including on [car entertainment systems](https://t.me/SmartTubeEN/6060).
+    
+    **Please share your success stories with us!**
+  </Accordion>
+</AccordionGroup>
+
+## Technical Issues
+
+<AccordionGroup>
+  <Accordion title="I get unknown codec or can't download video errors">
+    **Solution:**
+    
+    1. **Wait 5 seconds** - the video should start playing automatically
+    2. **Press play button** if waiting doesn't help
+    
+    **Other possible causes:**
+    - USB audio device attached (try disconnecting it)
+    - Disk storage is full (free up space)
+    
+    See [Troubleshooting guide](/guides/troubleshooting) for details.
+  </Accordion>
+  
+  <Accordion title='I get "video profile is not supported" error'>
+    Your device doesn't support the selected codec (usually AV01).
+    
+    **Solution:**
+    1. Press the **HQ** button (bottom-left)
+    2. Select **Video formats**
+    3. Choose **VP9** or **AVC** (not AV01)
+    
+    AV01 is NOT supported on most devices. VP9 is the best choice for most Android TV devices.
+    
+    See [Video Codecs guide](/configuration/video-codecs).
+  </Accordion>
+  
+  <Accordion title='I get "video unavailable" for unlisted videos'>
+    This is a **known bug** when watching:
+    - Unlisted videos
+    - Your own videos
+    
+    **Status:** Confirmed bug being worked on.
+    
+    **Workaround:** Use official YouTube app for unlisted content, or cast from your phone.
+  </Accordion>
+  
+  <Accordion title="I get Sign in to confirm you're not a bot error">
+    Your IP address range is blocked by YouTube for unauthenticated viewing.
+    
+    **Solutions:**
+    - Sign in to your YouTube account
+    - Change your network/internet connection
+    - Wait (temporary blocks may lift)
+    - Use a VPN to change IP (may violate YouTube ToS)
+    
+    This is a YouTube-side restriction, not a SmartTube issue.
+  </Accordion>
+  
+  <Accordion title="My device freezes when watching YouTube">
+    This is a **firmware or Android OS issue**, not specific to SmartTube.
+    
+    **Possible causes:**
+    - Buggy firmware
+    - Buggy custom ROM
+    - Hardware problems
+    
+    **Troubleshooting:**
+    1. Reboot your device
+    2. Clear SmartTube cache (_Settings > Apps > SmartTube > Clear cache_)
+    3. Reinstall SmartTube
+    4. Factory reset (last resort - backup first!)
+    
+    <Warning>
+    This issue is nearly impossible to debug since it's device-specific. We cannot help beyond these general steps.
+    </Warning>
+  </Accordion>
+  
+  <Accordion title="No search results (Android 11)">
+    Recent "Google app for Android TV" updates cause voice search bugs.
+    
+    **Solution:**
+    1. Go to _Settings > Apps > Google app for Android TV_
+    2. Select **Uninstall updates**
+    3. Voice search should now work
+    
+    See [Device-Specific Setup](/guides/device-specific).
+  </Accordion>
+</AccordionGroup>
+
+## Still Have Questions?
+
+<Info>
+**Before asking for help:**
+
+1. ✅ Search this FAQ with Ctrl+F / ⌘F
+2. ✅ Check the [Troubleshooting guide](/guides/troubleshooting)
+3. ✅ Read [Device-Specific Setup](/guides/device-specific)
+4. ✅ Browse recent chat history in support channels
+
+**Getting help:**
+- **Telegram group (English only)**: [@SmartTubeEN](http://t.me/SmartTubeEN)
+- **Discord**: [SmartTube Official](https://discord.gg/Wt8HDDej5z)
+- **GitHub Issues**: [github.com/yuliskov/SmartTube/issues](https://github.com/yuliskov/SmartTube/issues)
+- **Email**: firsthash@gmail.com
+
+The international community is friendly and helpful - don't worry if your English isn't perfect!
+</Info>

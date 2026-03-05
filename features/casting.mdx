@@ -1,0 +1,320 @@
+---
+title: "Casting to Your TV"
+description: "Cast videos from your phone or other devices to SmartTube using TV code pairing"
+---
+
+SmartTube supports casting from your phone, tablet, or other devices using a TV code pairing system.
+
+## How Casting Works
+
+<Info>
+Unlike the official YouTube app, SmartTube does **not** automatically appear in your casting list. You must manually link devices using a TV code.
+</Info>
+
+### Why Manual Pairing?
+
+The official YouTube app uses Google's proprietary casting protocol that automatically discovers devices on the same network. SmartTube:
+
+- Uses YouTube's TV code system instead
+- Provides more control over linked devices
+- Works without Google Play Services
+- Maintains privacy (no automatic network scanning)
+
+**Trade-off:** You need to pair devices once, but then casting works seamlessly.
+
+## Pairing Your Phone and TV
+
+<Steps>
+  <Step title="Open SmartTube on Your TV">
+    Launch SmartTube on your Android TV and navigate to the **Settings** menu (gear icon).
+  </Step>
+  
+  <Step title="Access Remote Control Settings">
+    Select **"Remote control"** (typically the 2nd option in the settings menu).
+    
+    A **TV code** will be displayed on your screen. Keep this screen open.
+  </Step>
+  
+  <Step title="Open YouTube on Your Phone">
+    On your smartphone or tablet, open the official **YouTube app** (or YouTube in a web browser).
+  </Step>
+  
+  <Step title="Navigate to YouTube Settings">
+    In the YouTube app:
+    - Tap your **profile picture** in the top right
+    - Go to **Settings**
+    - Select **General**
+    - Tap **"Watch on TV"**
+  </Step>
+  
+  <Step title="Enter the TV Code">
+    - Tap **"Connect using TV code"** (sometimes called "Link with TV code")
+    - Enter the code displayed on your TV screen
+    - Tap **"Connect"** or **"Link"**
+  </Step>
+  
+  <Step title="Confirmation">
+    Your phone and TV are now linked! The TV will appear as a casting destination in your YouTube app.
+  </Step>
+</Steps>
+
+<Tip>
+See the [screenshot guide](https://t.me/SmartTubeEN/8514) for visual step-by-step instructions.
+</Tip>
+
+## Casting Videos
+
+Once paired, casting is simple:
+
+<Steps>
+  <Step title="Ensure SmartTube is Open">
+    **Important:** SmartTube must be already running on your TV. It cannot automatically wake up the TV.
+  </Step>
+  
+  <Step title="Find the Cast Icon">
+    Open a video in the YouTube app on your phone. Look for the **cast icon** (rectangle with WiFi waves) at the top of the screen.
+  </Step>
+  
+  <Step title="Select Your TV">
+    Tap the cast icon and select your SmartTube device from the list.
+  </Step>
+  
+  <Step title="Video Plays on TV">
+    The video will start playing on your TV through SmartTube. You can control playback from your phone.
+  </Step>
+</Steps>
+
+## Compatible Apps
+
+You can cast to SmartTube from:
+
+<CardGroup cols={2}>
+  <Card title="Official YouTube App" icon="youtube">
+    The standard YouTube app for iOS and Android works perfectly with SmartTube's casting feature.
+  </Card>
+  
+  <Card title="YouTube Website" icon="browser">
+    Cast from YouTube in your web browser (desktop or mobile) using the cast button.
+  </Card>
+  
+  <Card title="YouTube Music" icon="music">
+    YouTube Music app supports casting to SmartTube for music videos and audio.
+  </Card>
+  
+  <Card title="Third-Party Apps" icon="mobile">
+    Apps like **ReVanced** or **NewPipe** that support YouTube's cast protocol should work.
+  </Card>
+</CardGroup>
+
+## Casting Controls
+
+When casting to SmartTube, you can control:
+
+- **Play/Pause** - Start and stop playback
+- **Seek** - Jump to different parts of the video
+- **Volume** - Adjust volume (if supported by your setup)
+- **Queue** - Add videos to the queue
+- **Next/Previous** - Skip between queued videos
+
+<Note>
+Your phone acts as a remote control while casting. The video plays on the TV, but you control it from your phone.
+</Note>
+
+## Limitations
+
+<Warning>
+SmartTube's casting has some technical limitations to be aware of:
+</Warning>
+
+### Must Open App First
+
+**SmartTube cannot automatically wake up your TV or launch itself when you try to cast.**
+
+This is a technical limitation due to SmartTube not using Google's proprietary casting protocol.
+
+**Workaround:**
+1. Turn on your TV
+2. Open SmartTube
+3. Then cast from your phone
+
+### Performance May Vary
+
+<Note>
+Casting and voice search performance may be inferior to official apps, depending on your device.
+</Note>
+
+Factors affecting casting performance:
+- Your WiFi network quality
+- TV device processing power
+- Network congestion
+- Distance from router
+
+**Tips for better performance:**
+- Use 5GHz WiFi instead of 2.4GHz when possible
+- Keep your router close to the TV
+- Reduce network congestion (pause other downloads)
+- Ensure both phone and TV are on the same network
+
+### Cannot Discover Automatically
+
+Unlike the official app, SmartTube won't automatically appear when you open the cast menu. You must pair devices first using the TV code method described above.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="TV doesn't appear in casting list">
+    **Solutions:**
+    1. Ensure you've completed the TV code pairing process
+    2. Verify both devices are on the **same WiFi network**
+    3. Make sure SmartTube is **currently open** on your TV
+    4. Try restarting both the TV app and phone app
+    5. Re-pair using a new TV code
+  </Accordion>
+  
+  <Accordion title="TV code pairing fails">
+    **Try these steps:**
+    1. Double-check you entered the code correctly
+    2. Ensure the code hasn't expired (generate a new one)
+    3. Check your internet connection on both devices
+    4. Update SmartTube to the latest version
+    5. Update the YouTube app on your phone
+  </Accordion>
+  
+  <Accordion title="Casting disconnects frequently">
+    **Possible causes and solutions:**
+    - **WiFi issues**: Move closer to router or use 5GHz band
+    - **Network congestion**: Pause other devices using bandwidth
+    - **TV going to sleep**: Adjust TV sleep settings
+    - **SmartTube closing**: Prevent your TV from force-closing background apps
+  </Accordion>
+  
+  <Accordion title="Video quality is poor when casting">
+    **Quality optimization:**
+    1. Check your WiFi speed (use [fast.com](https://fast.com))
+    2. Switch to 5GHz WiFi if available
+    3. Reduce casting quality in YouTube app settings
+    4. Move router closer to TV
+    5. Reduce the number of devices on your network
+  </Accordion>
+  
+  <Accordion title="Can't control playback from phone">
+    **Troubleshooting:**
+    1. Ensure the cast connection is still active (check cast icon)
+    2. Restart the YouTube app on your phone
+    3. Check if SmartTube is still running on TV
+    4. Disconnect and reconnect the cast
+    5. Re-pair devices if issues persist
+  </Accordion>
+</AccordionGroup>
+
+## Managing Linked Devices
+
+### Viewing Linked Devices
+
+To see which devices are linked to your SmartTube:
+1. Open SmartTube Settings
+2. Go to "Remote control"
+3. View the list of linked devices
+
+### Unlinking Devices
+
+To remove a device from casting:
+1. In SmartTube Settings > Remote control
+2. Select the device you want to unlink
+3. Choose "Remove" or "Unlink"
+
+<Tip>
+You can also unlink devices from your phone's YouTube app in Settings > General > Watch on TV.
+</Tip>
+
+## Multiple TVs
+
+You can link your phone to multiple SmartTube installations:
+
+1. **Pair each TV separately** using its unique TV code
+2. **Choose which TV** to cast to from the cast menu on your phone
+3. **Switch between TVs** by selecting a different device in the cast menu
+
+<Note>
+Each TV running SmartTube will appear as a separate device in your casting list once paired.
+</Note>
+
+## Casting Queue
+
+Build a playlist while casting:
+
+1. **Cast the first video** as normal
+2. **Find additional videos** in your YouTube app
+3. **Tap the cast icon** on those videos
+4. Select **"Add to queue"** instead of playing immediately
+5. **Videos play sequentially** on your TV
+
+<Tip>
+This is perfect for creating a viewing session without returning to your phone constantly!
+</Tip>
+
+## Privacy Considerations
+
+<Info>
+SmartTube's casting uses YouTube's official pairing system with your Google account.
+</Info>
+
+**What's shared:**
+- Your Google account links the phone and TV
+- YouTube knows which videos you're casting
+- Standard YouTube data collection applies
+
+**What's NOT shared:**
+- SmartTube doesn't add additional tracking
+- No extra data beyond standard YouTube casting
+- Local network scanning is not performed
+
+## Alternatives to Casting
+
+If casting doesn't work well for you:
+
+<CardGroup cols={2}>
+  <Card title="Use TV Remote" icon="remote">
+    Search and browse directly on SmartTube using your TV remote - no phone needed.
+  </Card>
+  
+  <Card title="Voice Search (with Bridge)" icon="microphone">
+    Install a bridge app to enable voice search directly on your TV. See the installation guide.
+  </Card>
+  
+  <Card title="Bluetooth Keyboard" icon="keyboard">
+    Connect a Bluetooth keyboard to your TV for easier searching and navigation.
+  </Card>
+  
+  <Card title="USB Keyboard" icon="usb">
+    Use a wired USB keyboard for the most reliable text input on your TV.
+  </Card>
+</CardGroup>
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Why can't SmartTube auto-launch when I cast?">
+    Auto-launching requires integration with Google's proprietary casting protocol, which is not available to third-party apps without Google Play Services. SmartTube uses YouTube's TV code system instead, which doesn't support auto-launch.
+  </Accordion>
+  
+  <Accordion title="Can I cast from iOS devices?">
+    Yes! The TV code pairing method works with the YouTube app on iPhones and iPads. Follow the same steps as Android.
+  </Accordion>
+  
+  <Accordion title="Do I need to re-pair every time?">
+    No, once paired, devices remain linked until you manually unlink them. You only need to pair once per device.
+  </Accordion>
+  
+  <Accordion title="Can multiple phones cast to one TV?">
+    Yes, you can pair multiple phones to the same SmartTube installation. Each phone can cast independently.
+  </Accordion>
+  
+  <Accordion title="Does casting work without internet?">
+    No, casting requires an internet connection to stream videos from YouTube's servers. Both devices must be online and on the same network.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+For the best experience, ensure both your phone and TV have strong WiFi signals and are using the latest versions of their respective apps.
+</Tip>

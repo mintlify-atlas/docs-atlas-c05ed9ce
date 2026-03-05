@@ -1,0 +1,350 @@
+---
+title: Device Compatibility
+description: Check if your device is compatible with SmartTube
+---
+
+# Device Compatibility
+
+SmartTube is designed for Android TV devices and TV boxes. This page will help you determine if your device is compatible.
+
+## Quick Compatibility Check
+
+<CardGroup cols={2}>
+  <Card title="Supported Devices" icon="circle-check" color="#10b981">
+    ✅ Android TVs and Google TVs
+    
+    ✅ Amazon Fire TV devices
+    
+    ✅ NVIDIA Shield TV
+    
+    ✅ Chromecast with Google TV
+    
+    ✅ Android TV boxes
+    
+    ✅ Xiaomi Mi Box
+  </Card>
+  <Card title="Not Supported" icon="circle-xmark" color="#ef4444">
+    ❌ Samsung Tizen TVs
+    
+    ❌ LG webOS TVs
+    
+    ❌ Roku devices
+    
+    ❌ iOS devices (iPhone, iPad, Apple TV)
+    
+    ❌ Smartphones and tablets
+  </Card>
+</CardGroup>
+
+## System Requirements
+
+<Info>
+SmartTube has minimal system requirements and can run on older Android TV devices.
+</Info>
+
+### Minimum Requirements
+
+| Requirement | Specification |
+|-------------|---------------|
+| **Operating System** | Android 4.3 (KitKat) or higher |
+| **Device Type** | Android TV, TV box, or TV stick |
+| **Remote Control** | Required (touch input not supported) |
+| **Internet Connection** | Required for streaming content |
+| **Storage Space** | ~50 MB for installation |
+
+<Tip>
+Even older Android TV devices from 2013-2014 running Android 4.3 can run SmartTube!
+</Tip>
+
+## Supported Devices
+
+### Android TVs and Google TVs
+
+SmartTube works on all Android TV and Google TV devices, including:
+
+<CardGroup cols={2}>
+  <Card title="Sony TVs" icon="tv">
+    All Sony Android TVs (Bravia series) are fully supported.
+  </Card>
+  <Card title="Philips TVs" icon="tv">
+    All Philips Android TVs are fully supported.
+  </Card>
+  <Card title="TCL TVs" icon="tv">
+    TCL Google TV models are fully supported.
+  </Card>
+  <Card title="Other Android TVs" icon="tv">
+    Any TV with Android TV or Google TV OS is supported.
+  </Card>
+</CardGroup>
+
+<Note>
+If a TV's product page says it's based on **Android TV** or **Google TV**, it will work with SmartTube.
+</Note>
+
+### Streaming Devices
+
+<Tabs>
+  <Tab title="Amazon Fire TV">
+    **Fully Supported**
+    
+    All Amazon Fire TV devices are compatible:
+    - Fire TV Stick (all generations)
+    - Fire TV Stick 4K
+    - Fire TV Stick 4K Max
+    - Fire TV Cube
+    - Fire TV (previous box models)
+    
+    SmartTube works perfectly on all Fire TV devices running Fire OS (which is based on Android).
+  </Tab>
+  
+  <Tab title="Chromecast with Google TV">
+    **Fully Supported**
+    
+    - Chromecast with Google TV (4K)
+    - Chromecast with Google TV (HD)
+    - TVs with Chromecast built-in
+    
+    <Info>
+    Chromecast devices require an [extra step during installation](/installation#chromecast-with-google-tv) to enable unknown sources.
+    </Info>
+  </Tab>
+  
+  <Tab title="NVIDIA Shield TV">
+    **Fully Supported**
+    
+    - NVIDIA Shield TV (all versions)
+    - NVIDIA Shield TV Pro
+    
+    SmartTube works excellently on Shield TV devices.
+    
+    <Warning>
+    **HDR Limitation:** NVIDIA Shield supports HDR in general, but not the specific HDR format used by YouTube. This is a hardware limitation, not a SmartTube issue.
+    </Warning>
+  </Tab>
+  
+  <Tab title="Xiaomi Mi Box">
+    **Fully Supported**
+    
+    - Xiaomi Mi Box S
+    - Xiaomi Mi Box (all versions)
+    - Xiaomi TV Stick
+    
+    <Info>
+    Xiaomi devices with Chinese firmware may have [installation restrictions](/installation#xiaomi-devices-with-chinese-firmware). International firmware is not affected.
+    </Info>
+  </Tab>
+</Tabs>
+
+### TV Boxes and Sticks
+
+**Generic Android TV boxes and sticks** are supported, including:
+- Chinese no-name Android TV boxes
+- Mecool TV boxes
+- Formuler TV boxes
+- Any TV box running Android 4.3 or higher
+
+<Tip>
+As long as your TV box runs Android (not just "Smart TV" firmware), it should work with SmartTube.
+</Tip>
+
+## Unsupported Devices
+
+### Non-Android Smart TVs
+
+<Warning>
+SmartTube **only** works on Android-based devices. It cannot be installed on non-Android platforms.
+</Warning>
+
+**Not Compatible:**
+- **Samsung Tizen TVs** - Use Tizen OS, not Android
+- **LG webOS TVs** - Use webOS, not Android
+- **Roku devices** - Use Roku OS, not Android
+- **Vizio SmartCast TVs** - Use custom OS, not Android
+- **iOS devices** - Use iOS/tvOS, not Android
+
+<Info>
+**Workaround:** If you have a non-Android TV, you can connect an Android TV stick or box (like Fire TV Stick or Chromecast with Google TV) to use SmartTube.
+</Info>
+
+### Smartphones and Tablets
+
+<Warning>
+**SmartTube is NOT for smartphones or tablets.** We offer **zero support** for these devices.
+</Warning>
+
+**Why it doesn't work well:**
+- Not optimized for touch input
+- Requires TV remote, controller, or keyboard
+- UI is designed for TV screens, not mobile devices
+- No portrait mode support
+- Scrolling doesn't work with touch
+
+**Alternatives for smartphones:**
+- [ReVanced](https://github.com/ReVanced) - YouTube app with extra features
+- [NewPipe](https://newpipe.schabi.org) - Lightweight YouTube client
+- [NewPipe x SponsorBlock](https://github.com/polymorphicshade/NewPipe) - NewPipe with SponsorBlock
+- [Pure Tuber](https://play.google.com/store/apps/details?id=free.tube.premium.advanced.tuber) - Alternative YouTube app
+
+### Special Cases: Tablets with TV Modes
+
+<Accordion title="Can I use SmartTube on a tablet or car screen?">
+**Maybe - but with strict requirements:**
+
+✅ Requirements:
+- Must be an **Android device**
+- Must have a **large screen**
+- Must have a **TV remote, controller, or keyboard**
+- **Touch input is NOT supported**
+- Mouse/touchpad scrolling is NOT supported
+
+Some users have successfully used SmartTube on:
+- Large tablets with Bluetooth keyboards
+- Car entertainment systems with Android (see [community example](https://t.me/SmartTubeEN/6060))
+- Tablets in docking stations with controllers
+
+<Warning>
+You **cannot** use SmartTube with only touch or mouse input. A remote or keyboard is required.
+</Warning>
+</Accordion>
+
+## Hardware Features
+
+### Video Capabilities
+
+<Tabs>
+  <Tab title="Resolution Support">
+    **SmartTube supports up to 8K resolution**, but actual playback depends on your hardware:
+    
+    | Resolution | Requirement |
+    |------------|-------------|
+    | 8K (4320p) | Device must support 8K output |
+    | 4K (2160p) | Device must support 4K/UHD output |
+    | 1080p (Full HD) | Works on most devices |
+    | 720p (HD) | Works on all devices |
+    
+    <Note>
+    SmartTube automatically detects your device's capabilities and offers appropriate quality options.
+    </Note>
+  </Tab>
+  
+  <Tab title="Frame Rate">
+    **60fps playback is supported** if your device can handle it.
+    
+    - Most modern devices (2017+) support 60fps
+    - Older or budget devices may struggle with 60fps at high resolutions
+    - You can always choose 30fps to save bandwidth
+  </Tab>
+  
+  <Tab title="HDR Compatibility">
+    **HDR works if your hardware supports it.** This requires:
+    
+    ✅ Your TV must support HDR
+    
+    ✅ Your TV box/stick must support HDR (if using one)
+    
+    ✅ Your HDMI cable must support HDR
+    
+    ✅ The device must support YouTube's HDR format
+    
+    <Warning>
+    **Known limitation:** NVIDIA Shield supports HDR in general, but not the specific HDR format used by YouTube. This is a hardware limitation.
+    </Warning>
+    
+    If HDR videos look dim or washed out, check [this Wired article](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/) for troubleshooting.
+  </Tab>
+  
+  <Tab title="Video Codecs">
+    SmartTube supports three video codecs:
+    
+    | Codec | Hardware Support | Performance |
+    |-------|------------------|-------------|
+    | **AV1** | Devices from 2020+ | Best compression, requires hardware support |
+    | **VP9** | Most devices since 2015 | Good compression, widely supported |
+    | **AVC (H.264)** | All devices | Older codec, works everywhere |
+    
+    <Tip>
+    Use the newest codec your device supports for best quality and bandwidth efficiency. See the [video quality guide](/features/video-quality) for more details.
+    </Tip>
+  </Tab>
+</Tabs>
+
+### Google Services
+
+<Info>
+**SmartTube does not require Google Services** to function. It works independently.
+</Info>
+
+This means:
+- You can use SmartTube on devices without Google Play Services
+- No Google account is required (though you can sign in optionally)
+- Works on custom ROMs without Google apps
+
+## Performance Expectations
+
+### Modern Devices (2017 and newer)
+
+✅ **Excellent performance** expected:
+- Smooth 4K playback
+- 60fps support
+- Fast app navigation
+- Quick video loading
+
+### Mid-Range Devices (2015-2017)
+
+✅ **Good performance** expected:
+- Smooth 1080p playback
+- 60fps at lower resolutions
+- Normal app navigation
+- Some devices support 4K
+
+### Older Devices (2013-2015)
+
+⚠️ **Basic performance** expected:
+- Smooth 720p/1080p playback
+- 30fps recommended
+- May be slower in menus
+- VP9 codec may not be hardware accelerated
+
+<Tip>
+On older devices, use the **AVC codec** for best performance. You can change this in video quality settings.
+</Tip>
+
+## Checking Your Device
+
+### How to Find Your Android Version
+
+<Steps>
+  <Step title="Open Settings">
+    Navigate to your device's **Settings** app.
+  </Step>
+  
+  <Step title="Go to About">
+    Go to **Device Preferences** > **About** (or just **About** depending on your device).
+  </Step>
+  
+  <Step title="Check Android version">
+    Look for **Android version** or **Android TV OS build**.
+    
+    If it shows Android 4.3 or higher, you're good to go!
+  </Step>
+</Steps>
+
+### How to Check if Your TV is Android-Based
+
+1. Check your TV's product page or manual
+2. Look for mentions of "Android TV" or "Google TV"
+3. Check if you have the Google Play Store app
+4. Look for the Android TV home screen interface
+
+If none of these apply, your TV likely uses a different operating system and won't support SmartTube.
+
+## Need Help?
+
+<CardGroup cols={2}>
+  <Card title="Installation Guide" icon="download" href="/installation">
+    Learn how to install SmartTube on your compatible device
+  </Card>
+  <Card title="Community Support" icon="comments" href="/community/support">
+    Get help from the SmartTube community
+  </Card>
+</CardGroup>

@@ -1,0 +1,308 @@
+---
+title: Troubleshooting
+description: Solutions to common SmartTube issues including playback errors, buffering, and installation problems
+---
+
+## Common Playback Issues
+
+<AccordionGroup>
+  <Accordion title='"Unknown codec" Error'>
+    This error typically appears briefly when starting a video.
+    
+    **Solutions:**
+    
+    <Steps>
+      <Step title="Wait 5 Seconds">
+        The video should start playing automatically after a brief moment
+      </Step>
+      
+      <Step title="Press Play">
+        If waiting doesn't work, manually press the play button
+      </Step>
+    </Steps>
+    
+    **Additional causes:**
+    
+    - **USB audio device attached**: Some users report this error only occurs when USB audio devices are connected. Try disconnecting USB audio devices.
+    - **Full disk storage**: Check if your device storage is full. Free up space by clearing cache or uninstalling unused apps.
+    
+    <Tip>
+    This is usually a temporary initialization issue and resolves itself within seconds.
+    </Tip>
+  </Accordion>
+  
+  <Accordion title='"Video profile is not supported" Error'>
+    This means your device doesn't support the selected video codec (usually AV01).
+    
+    **Solution:**
+    
+    <Steps>
+      <Step title="Open Format Settings">
+        Press the **HQ** button in the bottom-left corner of the player
+      </Step>
+      
+      <Step title="Select Video Formats">
+        Choose **Video formats** from the menu
+      </Step>
+      
+      <Step title="Change Codec">
+        Select anything **other than AV01** - choose **VP9** or **AVC** instead
+      </Step>
+    </Steps>
+    
+    <Warning>
+    AV01 is NOT supported on most devices, especially those manufactured before 2020. VP9 is the best choice for most Android TV devices.
+    </Warning>
+    
+    See the [Video Codecs guide](/configuration/video-codecs) for more information on choosing the right codec.
+  </Accordion>
+  
+  <Accordion title='"Video unavailable" for Unlisted Videos'>
+    Currently a known bug when watching unlisted videos or your own videos.
+    
+    **Status:** This is a confirmed bug that's being worked on.
+    
+    **Workaround:** Use the official YouTube app for unlisted content, or use [casting](/features/casting) from your phone.
+  </Accordion>
+  
+  <Accordion title="Sign in to confirm you're not a bot Error">
+    This occurs when your IP address range is blocked by YouTube for unauthenticated viewing.
+    
+    **Solutions:**
+    
+    1. **Sign in to your account**: This usually resolves the issue immediately
+    2. **Change your network**: Try a different internet connection
+    3. **Wait it out**: Temporary blocks may be lifted after some time
+    4. **Use VPN**: Change your IP address (may be against YouTube's ToS)
+    
+    <Info>
+    This is a YouTube-side restriction, not a SmartTube issue. Your IP range might be temporarily or permanently flagged.
+    </Info>
+  </Accordion>
+</AccordionGroup>
+
+## Buffering Issues
+
+### Videos Buffer Excessively
+
+Buffering issues are not specific to SmartTube - other unofficial YouTube apps report the same problems. This appears to be server-side discrimination by YouTube.
+
+<AccordionGroup>
+  <Accordion title="Solution 1: Use Encrypted DNS (Recommended)">
+    Switching to encrypted DNS like NextDNS often resolves buffering issues.
+    
+    **Automatic Setup:**
+    
+    <Steps>
+      <Step title="Install Intra">
+        Download [Intra from F-Droid](https://f-droid.org/en/packages/app.intra/)
+      </Step>
+      
+      <Step title="Configure Intra">
+        Open Intra and enable DNS encryption
+      </Step>
+      
+      <Step title="Auto-start Setup">
+        Install ["AutoStart - No root"](https://play.google.com/store/apps/details?id=com.autostart) to make Intra launch automatically after TV restarts
+      </Step>
+    </Steps>
+    
+    **Manual Setup:**
+    
+    Follow [this Reddit guide](https://www.reddit.com/r/MiBox/s/7esEVGtAAa) for manual DNS configuration.
+  </Accordion>
+  
+  <Accordion title="Solution 2: Adjust Video Settings">
+    Try these in-app adjustments:
+    
+    - **Reduce resolution**: Lower video quality temporarily
+    - **Change codec to AVC**: Press HQ button > Video formats > AVC
+    - **Increase buffer size**: Go to _Settings > Video player > Buffer size_ and select **High**
+    - **Restart video**: Hit back button and play the video again
+  </Accordion>
+  
+  <Accordion title="Solution 3: Network Troubleshooting">
+    Check your network connection:
+    
+    - Test your internet speed at [fast.com](https://fast.com)
+    - Ensure you have at least 5 Mbps for HD content
+    - Try connecting via Ethernet instead of WiFi
+    - Restart your router
+    - Move closer to your WiFi router if using wireless
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+**Buffer setting recommendation:** Use **High** buffer for best performance. Higher buffer preloads more video, smoothing out network issues. RAM usage increase is minimal.
+</Tip>
+
+## Installation Problems
+
+<AccordionGroup>
+  <Accordion title="Installation Fails">
+    **Common causes:**
+    
+    1. **Disk space is full**
+       - Free up at least 200 MB of storage
+       - Clear cache from other apps
+       - Uninstall unused apps
+    
+    2. **APK download corrupted**
+       - Download the APK again
+       - Ensure stable internet connection during download
+       - Verify file size is reasonable (usually 60-80 MB)
+    
+    3. **Unknown sources blocked**
+       - Enable "Unknown sources" for your file manager/downloader
+       - See [Installation guide](/installation) for device-specific steps
+  </Accordion>
+  
+  <Accordion title="App Installed but Crashes on Opening">
+    This happens when SmartTube is installed to external storage.
+    
+    **Solution:**
+    
+    <Steps>
+      <Step title="Uninstall SmartTube">
+        Remove the current installation
+      </Step>
+      
+      <Step title="Check Storage Settings">
+        Go to device settings and ensure apps install to **internal memory** by default
+      </Step>
+      
+      <Step title="Reinstall">
+        Install SmartTube again - it should now go to internal storage
+      </Step>
+    </Steps>
+    
+    <Warning>
+    SmartTube MUST be installed to internal memory, not SD card or external storage, or it will crash.
+    </Warning>
+  </Accordion>
+  
+  <Accordion title="Cannot Find Downloaded APK">
+    If you downloaded the APK but can't find it:
+    
+    - Use a file manager app like [FX File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)
+    - Check the **Downloads** folder
+    - Android's built-in file manager often doesn't work properly
+    - Avoid FileCommander (it's ad-infested)
+  </Accordion>
+</AccordionGroup>
+
+## App Crashes and Freezes
+
+<AccordionGroup>
+  <Accordion title="Device Freezes When Watching YouTube">
+    This is typically a firmware or Android OS issue, not SmartTube-specific.
+    
+    **Potential causes:**
+    - Buggy firmware
+    - Custom ROM issues
+    - Hardware problems
+    
+    **Troubleshooting steps:**
+    
+    <Steps>
+      <Step title="Reboot Device">
+        Turn off your Android TV completely and turn it back on
+      </Step>
+      
+      <Step title="Clear Cache">
+        Go to _Settings > Apps > SmartTube > Clear cache_ (not Clear data)
+      </Step>
+      
+      <Step title="Reinstall App">
+        Uninstall and reinstall SmartTube
+      </Step>
+      
+      <Step title="Factory Reset (Last Resort)">
+        If all else fails, factory reset your device (backup data first!)
+      </Step>
+    </Steps>
+    
+    <Warning>
+    This issue is nearly impossible for the developer to debug since it's device/firmware-specific. If using a custom ROM, the ROM might be buggy.
+    </Warning>
+  </Accordion>
+  
+  <Accordion title="App Crashes Immediately">
+    See "App Installed but Crashes on Opening" above - usually caused by installation to external storage.
+  </Accordion>
+</AccordionGroup>
+
+## Playback Performance Issues
+
+<AccordionGroup>
+  <Accordion title="AV01 Videos Don't Play">
+    Most TVs and TV boxes do **not** have hardware support for AV01 codec (too new).
+    
+    **Solution:** Switch to VP9 or AVC codec (see "Video profile is not supported" section above)
+    
+    <Info>
+    AV01 hardware support started appearing in devices from 2020 onwards. Most devices still don't support it.
+    </Info>
+  </Accordion>
+  
+  <Accordion title="VP9 is Slow/Laggy">
+    If VP9 videos play poorly:
+    
+    - Your device may lack VP9 hardware support
+    - High resolutions (4K) require official hardware support
+    - Cheap TV boxes without official 4K support will struggle
+    
+    **Solution:** Switch to AVC codec, which is supported on all devices
+  </Accordion>
+  
+  <Accordion title="Frame Drops at Different Playback Speeds">
+    Known issue when playing videos at speeds other than 1x.
+    
+    **Status:** Currently cannot be fixed. This is a limitation of the video playback engine.
+    
+    **Workaround:** Use normal playback speed (1x) for smooth playback.
+  </Accordion>
+  
+  <Accordion title="Buffer Clears When Seeking Backwards">
+    When you jump back in a video, SmartTube must rebuffer.
+    
+    **Status:** This is current behavior and may be improved in future updates.
+    
+    **Workaround:** Minimize seeking backwards, or use higher buffer setting to reduce rebuffering time.
+  </Accordion>
+</AccordionGroup>
+
+## Search Issues
+
+<AccordionGroup>
+  <Accordion title="No Search Results (Android 11)">
+    Recent updates to "Google app for Android TV" can cause voice search failures.
+    
+    **Solution:**
+    
+    <Steps>
+      <Step title="Open App Settings">
+        Go to _Settings > Apps > Google app for Android TV_
+      </Step>
+      
+      <Step title="Uninstall Updates">
+        Select **Uninstall updates** to revert to the original version
+      </Step>
+      
+      <Step title="Test Search">
+        Try voice search again - it should now work
+      </Step>
+    </Steps>
+  </Accordion>
+</AccordionGroup>
+
+## Getting Additional Help
+
+<Info>
+If your issue isn't covered here:
+
+1. Check the [FAQ](/guides/faq) for more questions and answers
+2. Search the README using Ctrl+F / ⌘F
+3. Join the [Telegram support group](http://t.me/SmartTubeEN) (English only)
+4. Report issues on [GitHub](https://github.com/yuliskov/SmartTube/issues)
+</Info>

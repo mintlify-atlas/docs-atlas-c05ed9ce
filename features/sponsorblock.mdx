@@ -1,0 +1,275 @@
+---
+title: "SponsorBlock Integration"
+description: "Automatically skip sponsored segments, intros, outros, and more with community-powered SponsorBlock"
+---
+
+SmartTube includes built-in SponsorBlock integration, allowing you to automatically skip sponsored segments and other unwanted parts of videos.
+
+## What is SponsorBlock?
+
+<Info>
+SponsorBlock is an open-source crowdsourced project that lets you skip sponsor segments in YouTube videos using a privacy-preserving query system.
+</Info>
+
+From the [SponsorBlock website](https://sponsor.ajay.app/):
+
+> SponsorBlock is an open-source crowdsourced browser extension and open API for **skipping sponsor segments** in YouTube videos. The extension automatically skips sponsors **it knows about** using a privacy preserving query system. It also supports skipping **other categories**, such as intros, outros and reminders to subscribe [and non-music parts in music videos].
+
+### How It Works
+
+<Steps>
+  <Step title="Community Submissions">
+    Users around the world watch videos and submit timestamps for different segment types (sponsors, intros, etc.) to the SponsorBlock database.
+  </Step>
+  
+  <Step title="Privacy-Preserving Queries">
+    When you watch a video, SmartTube queries the SponsorBlock API using only the video ID - no personal information is shared.
+  </Step>
+  
+  <Step title="Automatic Skipping">
+    If segments are found in the database, SmartTube automatically skips them based on your configured preferences.
+  </Step>
+  
+  <Step title="Seamless Playback">
+    The video continues playing smoothly, as if the unwanted segments never existed.
+  </Step>
+</Steps>
+
+## Segment Categories
+
+SponsorBlock can skip multiple types of segments. You can choose which categories to skip in SmartTube's settings:
+
+<AccordionGroup>
+  <Accordion title="Sponsor" icon="dollar-sign">
+    **Paid promotion segments**
+    
+    When a creator promotes a product or service in exchange for payment or sponsorship. This is the most common category.
+    
+    Example: "This video is sponsored by NordVPN..."
+  </Accordion>
+  
+  <Accordion title="Unpaid/Self Promotion" icon="bullhorn">
+    **Unpaid promotions**
+    
+    When a creator promotes their own products, services, or other channels without direct payment from a third party.
+    
+    Example: "Check out my merch store..."
+  </Accordion>
+  
+  <Accordion title="Interaction Reminder" icon="bell">
+    **Reminders to like, subscribe, or follow**
+    
+    Segments where creators ask viewers to like, subscribe, follow on social media, or engage with the video.
+    
+    Example: "Don't forget to hit that like button and subscribe!"
+  </Accordion>
+  
+  <Accordion title="Intermission/Intro Animation" icon="film">
+    **Intro sequences**
+    
+    Intro animations, channel branding, or segments that occur at the start of videos before the main content.
+    
+    Example: Animated logo sequences or standard intro clips
+  </Accordion>
+  
+  <Accordion title="Endcards/Credits" icon="credit-card">
+    **Outro sequences**
+    
+    Credits, end cards, or outros at the end of videos after the main content has finished.
+    
+    Example: "Thanks for watching" segments with suggested videos
+  </Accordion>
+  
+  <Accordion title="Preview/Recap" icon="rotate-left">
+    **Previews and recaps**
+    
+    Quick previews of what's coming in the video, or recaps of previous episodes/videos.
+    
+    Example: "In today's video we'll be..." or "Last time on..."
+  </Accordion>
+  
+  <Accordion title="Music: Non-Music Section" icon="music">
+    **Non-music sections in music videos**
+    
+    Parts of music videos that don't contain music, such as talking segments or skits.
+    
+    Example: Dialogue or story segments in music videos
+  </Accordion>
+  
+  <Accordion title="Filler Tangent" icon="comment-dots">
+    **Tangential content**
+    
+    Tangential scenes or jokes that aren't required to understand the main content.
+    
+    Example: Long unrelated stories or extended jokes
+  </Accordion>
+</AccordionGroup>
+
+## How to Configure SponsorBlock
+
+<Steps>
+  <Step title="Open SmartTube Settings">
+    Launch SmartTube and navigate to the Settings menu (gear icon).
+  </Step>
+  
+  <Step title="Find SponsorBlock Settings">
+    Look for the SponsorBlock section in the settings menu.
+  </Step>
+  
+  <Step title="Select Categories">
+    Choose which segment categories you want to skip automatically. You can enable or disable each category individually.
+  </Step>
+  
+  <Step title="Configure Skip Behavior">
+    Choose whether segments should be:
+    - **Auto-skip**: Automatically skipped without notification
+    - **Show in seek bar**: Highlighted but not skipped
+    - **Manual skip**: Show a skip button you can choose to press
+  </Step>
+  
+  <Step title="Save and Enjoy">
+    Your preferences are saved automatically. Start watching videos and SponsorBlock will work in the background!
+  </Step>
+</Steps>
+
+<Tip>
+Start by enabling just the "Sponsor" category to see how it works, then add other categories based on your preferences.
+</Tip>
+
+## Limitations
+
+<Warning>
+SmartTube's SponsorBlock integration has some limitations compared to the browser extension.
+</Warning>
+
+### Cannot Submit Segments
+
+**You cannot submit new segments** from SmartTube. TVs and TV remotes aren't great devices for precise timestamp operations required for segment submission.
+
+**Why?**
+- Requires precise timestamp marking
+- Needs detailed category selection
+- TV interfaces aren't optimized for this workflow
+- Remote controls lack precision for frame-accurate editing
+
+**Alternative**: If you want to contribute segments, use:
+- The SponsorBlock browser extension on desktop
+- The YouTube ReVanced app on mobile
+
+### Depends on Community
+
+SponsorBlock is a **free and voluntary project** based on user submissions.
+
+<Note>
+Don't expect SponsorBlock to work 100% of the time. The effectiveness depends on:
+- Whether someone has watched and submitted segments for that video
+- How recently the video was uploaded
+- The video's popularity and view count
+</Note>
+
+**Common scenarios:**
+- **New videos**: May not have segments yet (usually added within hours/days for popular channels)
+- **Unpopular videos**: May never receive segment submissions
+- **Server issues**: SponsorBlock servers can occasionally be offline or overloaded
+- **Inaccurate segments**: Sometimes timestamps may be slightly off (community voting helps improve accuracy)
+
+## How SponsorBlock Protects Privacy
+
+SponsorBlock is designed with privacy in mind:
+
+1. **No account required** - works anonymously
+2. **Only video IDs are sent** - no personal information
+3. **No tracking** - doesn't monitor your viewing habits
+4. **Open source** - code is publicly auditable
+5. **Minimal data** - only queries what's necessary
+
+## Coverage Statistics
+
+SponsorBlock has impressive coverage:
+
+- **Millions of segments** submitted across YouTube
+- **Popular channels**: Nearly 100% coverage within hours of upload
+- **Active community**: Thousands of daily contributors
+- **Multiple languages**: Works on content in any language
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Why didn't SponsorBlock skip a sponsor?">
+    Possible reasons:
+    - The segment hasn't been submitted yet (especially for new videos)
+    - SponsorBlock servers are temporarily unavailable
+    - The category is disabled in your settings
+    - The video is too new or unpopular for submissions
+    
+    Check your internet connection and settings. For new videos, try again later.
+  </Accordion>
+  
+  <Accordion title="Can I see what was skipped?">
+    Yes! Look at the video seek bar - skipped segments are typically highlighted in different colors based on their category. You can also manually seek to those segments if you want to watch them.
+  </Accordion>
+  
+  <Accordion title="Will this work on live streams?">
+    SponsorBlock works best on VODs (video on demand). For live streams:
+    - **During live**: No segments available yet
+    - **After stream ends**: Segments may be added by the community
+    - **Stream archives**: Full SponsorBlock support
+  </Accordion>
+  
+  <Accordion title="Can I report incorrect segments?">
+    Not directly from SmartTube due to TV interface limitations. However:
+    - Incorrect segments are often downvoted by the community
+    - Community moderation helps maintain quality
+    - Most segments are accurate due to voting systems
+  </Accordion>
+  
+  <Accordion title="Does this violate creator rights?">
+    SponsorBlock is legal and doesn't violate copyright:
+    - You still watch the full video file
+    - Creators retain all their content
+    - It's similar to manually skipping forward
+    - Many creators support viewer choice
+    
+    However, sponsorships help creators financially, so consider supporting them through other means.
+  </Accordion>
+  
+  <Accordion title="How accurate are the segments?">
+    Generally very accurate! The community voting system ensures:
+    - Bad submissions get downvoted
+    - Good submissions get upvoted
+    - Multiple submissions are averaged
+    - Trusted users' submissions are weighted higher
+    
+    Occasionally you may encounter slightly off timestamps, but these are rare.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Start Conservative" icon="user-shield">
+    Begin by enabling only the "Sponsor" category, then add more categories as you get comfortable with the feature.
+  </Card>
+  
+  <Card title="Check Seek Bar" icon="chart-bar">
+    Glance at the seek bar to see what segments are available before they're skipped - you might want to watch some of them.
+  </Card>
+  
+  <Card title="Support Creators" icon="heart">
+    Remember that sponsors help creators earn a living. Consider supporting your favorites through Patreon or memberships.
+  </Card>
+  
+  <Card title="Be Patient" icon="clock">
+    For very new videos, segments may not be available yet. Check back in a few hours for popular channels.
+  </Card>
+</CardGroup>
+
+## Combining with Ad Blocking
+
+<Tip>
+SmartTube's [ad blocking](/features/ad-blocking) removes YouTube's ads, while SponsorBlock removes in-video sponsors. Together, they provide a completely uninterrupted viewing experience!
+</Tip>
+
+- **YouTube ads**: Blocked by SmartTube's architecture
+- **Sponsored segments**: Skipped by SponsorBlock
+- **Result**: Pure content, zero interruptions

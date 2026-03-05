@@ -1,0 +1,365 @@
+---
+title: Settings Overview
+description: Comprehensive guide to SmartTube settings including buffer configuration, background playback, UI customization, and theme options
+---
+
+SmartTube provides extensive customization options through its settings menu. This guide covers the main settings sections and important configuration options.
+
+## Accessing Settings
+
+Open SmartTube and navigate to the settings menu from the main screen. Settings are organized into logical sections for easy navigation.
+
+## Settings Sections
+
+<CardGroup cols={2}>
+  <Card title="General Settings" icon="gear">
+    App behavior, language, country, and basic preferences
+  </Card>
+  
+  <Card title="Video Player" icon="play">
+    Quality presets, codecs, playback speed, and player controls
+  </Card>
+  
+  <Card title="Remote Control" icon="remote">
+    Device pairing, casting, and TV code linking
+  </Card>
+  
+  <Card title="Background Playback" icon="window-restore">
+    Picture-in-Picture and background audio settings
+  </Card>
+  
+  <Card title="Interface" icon="palette">
+    Themes, UI scale, customizable buttons, and appearance
+  </Card>
+  
+  <Card title="About" icon="circle-info">
+    Updates, version info, and built-in updater
+  </Card>
+</CardGroup>
+
+## Buffer Settings
+
+Buffer settings control how much video data is preloaded ahead of your current playback position.
+
+### High vs Low Buffer
+
+<Tabs>
+  <Tab title="High Buffer (Recommended)">
+    **Advantages:**
+    - More video preloaded ahead of current position
+    - Smooths out network issues and prevents buffering pauses
+    - Better experience on unstable connections
+    - Minimal impact on RAM usage
+    
+    **Best for:**
+    - Users with unstable internet connections
+    - Watching longer videos
+    - Preventing playback interruptions
+    
+    <Tip>
+    **Recommendation: High buffer** - The benefits far outweigh any minimal RAM usage increase.
+    </Tip>
+  </Tab>
+  
+  <Tab title="Low Buffer">
+    **Advantages:**
+    - Slightly lower RAM usage
+    - Minimal bandwidth savings if you often close videos early
+    
+    **Disadvantages:**
+    - More likely to pause for buffering
+    - Less protection against network hiccups
+    - May interrupt playback more frequently
+    
+    **Best for:**
+    - Devices with very limited RAM (rare)
+    - Users who frequently skip through videos
+  </Tab>
+</Tabs>
+
+<Accordion title="Buffer Setting Location">
+  **How to adjust buffer:**
+  
+  1. Open SmartTube
+  2. Go to **Settings**
+  3. Navigate to **Video Player** section
+  4. Look for **Buffer** options
+  5. Select **High** or **Low**
+  
+  <Info>
+  The higher your buffer, the more video will be preloaded. A high buffer increases RAM usage slightly but shouldn't cause issues on modern devices.
+  </Info>
+</Accordion>
+
+<Accordion title="Known Buffer Limitations">
+  <Warning>
+  **Seeking backwards:** When you seek back (e.g., jump back 5 seconds), SmartTube will have to rebuffer. The buffer is not retained when seeking backwards.
+  </Warning>
+  
+  This may be improved in a future update.
+</Accordion>
+
+## Background Playback Options
+
+SmartTube supports playing videos while using other apps or when the screen is off.
+
+### Picture-in-Picture (PiP)
+
+<Steps>
+  <Step title="Enable Picture-in-Picture">
+    Navigate to **Settings** → **General** → **Background playback** → **Picture in picture**
+    
+    Enable this option to allow videos to continue in a small floating window.
+  </Step>
+  
+  <Step title="Configure PiP Activation">
+    Set when PiP should activate:
+    - **Home button**: Video enters PiP when you press home (default)
+    - **Back button**: Video enters PiP when you press back (optional)
+    
+    Configure in **Settings** → **General** → **Background playback (activation)**
+  </Step>
+  
+  <Step title="Use Picture-in-Picture">
+    While playing a video:
+    - Press the **Home** button (or **Back** if enabled)
+    - Video continues in a small window
+    - Navigate to other apps while watching
+    - Tap the PiP window to return to full screen
+  </Step>
+</Steps>
+
+<Accordion title="Picture-in-Picture Settings">
+  **Available PiP options:**
+  
+  - **Enable/Disable PiP**: Turn the feature on or off
+  - **Activation triggers**: Choose which buttons activate PiP
+  - **Window size**: Some devices allow PiP window size adjustment
+  - **Position**: PiP window position on screen (device dependent)
+  
+  <Info>
+  PiP support and options vary by device and Android version. Some features may not be available on older devices.
+  </Info>
+</Accordion>
+
+### Background Audio
+
+<Accordion title="Audio Playback When Screen Is Off">
+  Background audio allows music or podcasts to continue playing with the screen off.
+  
+  **Configuration:**
+  1. Go to **Settings** → **General** → **Background playback**
+  2. Enable background audio options
+  3. Choose screen-off behavior
+  
+  **Use cases:**
+  - Music videos and playlists
+  - Podcasts and interviews
+  - Saving battery on long audio content
+</Accordion>
+
+## Customization Options
+
+### Theme and UI Settings
+
+<Accordion title="Theme Options">
+  SmartTube offers multiple theme choices for different preferences and viewing conditions.
+  
+  **Available themes:**
+  - **Dark theme** (default) - Best for low-light environments
+  - **Light theme** - Better for bright environments
+  - **Black/OLED theme** - Pure black backgrounds for OLED displays
+  - **Custom color themes** - Various color scheme options
+  
+  **How to change theme:**
+  1. Go to **Settings** → **Interface**
+  2. Select **Theme** or **Appearance**
+  3. Choose your preferred theme
+  4. Theme applies immediately
+  
+  <Tip>
+  OLED users: Use the pure black theme to save power and reduce screen burn-in risk.
+  </Tip>
+</Accordion>
+
+<Accordion title="Interface Scale and Layout">
+  Adjust UI size and layout to match your screen size and viewing distance.
+  
+  **Options:**
+  - **UI scale**: Make interface elements larger or smaller
+  - **Card size**: Adjust thumbnail/card dimensions
+  - **Text size**: Increase or decrease text readability
+  - **Sidebar position**: Customize menu placement
+  
+  **Configuration:**
+  - Navigate to **Settings** → **Interface**
+  - Adjust scale and layout options
+  - Changes apply immediately
+</Accordion>
+
+### Customizable Buttons
+
+SmartTube allows customization of on-screen buttons and remote control mappings.
+
+<Accordion title="Custom Button Configuration">
+  You can customize which buttons appear in the player interface:
+  
+  **Customizable elements:**
+  - Player control buttons
+  - Quick action buttons
+  - Menu shortcuts
+  - Long-press actions
+  
+  **How to customize:**
+  1. Go to **Settings** → **Interface**
+  2. Look for **Buttons** or **Controls** section
+  3. Enable/disable specific buttons
+  4. Reorder button positions (if supported)
+  
+  <Info>
+  Customizable buttons give you quick access to frequently used features like playback speed, quality selection, and SponsorBlock.
+  </Info>
+</Accordion>
+
+<Card title="Remote Control Configuration" icon="remote" href="/configuration/remote-control">
+  Learn about remote control pairing, TV code linking, and button customization
+</Card>
+
+## Playback Settings
+
+### Autoplay Modes
+
+<Accordion title="Configuring Autoplay Behavior">
+  Control what happens when a video ends.
+  
+  **How to change autoplay mode:**
+  - While playing a video, press the **loop button** 🔁
+  - Cycles through different autoplay modes
+  
+  **Available modes:**
+  - **Autoplay on**: Next video starts automatically
+  - **Autoplay off**: Video stops after each video ends
+  - **Repeat one**: Current video loops continuously
+  - **Repeat all**: Playlist or queue loops continuously
+  
+  <Tip>
+  You can quickly switch between autoplay modes using the loop button in the player interface.
+  </Tip>
+</Accordion>
+
+### Playback Speed
+
+<Accordion title="Adjusting Playback Speed">
+  Change video playback speed for faster or slower viewing.
+  
+  **How to adjust:**
+  1. While playing a video, press the **speed indicator** icon (gauge) in the top row
+  2. Select desired speed (0.25x to 2x or higher)
+  3. Speed is remembered across videos
+  
+  **Common speeds:**
+  - **0.5x**: Slow motion, tutorials
+  - **1.0x**: Normal speed
+  - **1.25x**: Slightly faster, comfortable for most content
+  - **1.5x**: Faster pacing, good for podcasts
+  - **2.0x**: Very fast, for familiar content
+  
+  <Warning>
+  **Known issue:** Some playback speeds may cause frame drops. This is a known limitation and cannot currently be fixed.
+  </Warning>
+</Accordion>
+
+## Update Settings
+
+SmartTube includes a built-in updater for easy updates.
+
+<Accordion title="Update Configuration">
+  **Built-in updater features:**
+  
+  - Automatic update checks (few seconds after launch)
+  - Changelog display
+  - Manual update option
+  - Beta vs Stable channel selection
+  
+  **How to configure:**
+  1. Go to **Settings** → **About**
+  2. Choose update preferences:
+     - Enable/disable automatic update checks
+     - Select update channel (beta or stable)
+  3. **Manual update**: Tap "Check for updates" to update immediately
+  
+  <Info>
+  You only need to manually install SmartTube once. All future updates can be done through the built-in updater.
+  </Info>
+</Accordion>
+
+<Accordion title="Update Troubleshooting">
+  **If update fails:**
+  
+  1. **Check disk space**: Most common cause - free up storage
+  2. **Retry download**: Update may not have downloaded correctly
+  3. **Manual update**: Go to **Settings** → **About** → **Check for updates**
+  4. **Verify storage**: Install to internal memory, not SD card
+  
+  <Warning>
+  Updates require sufficient disk space. Clear up storage if installation fails.
+  </Warning>
+</Accordion>
+
+## Advanced Settings
+
+<CardGroup cols={2}>
+  <Card title="Country Selection" icon="globe">
+    Change your region to affect video recommendations and trending content. Based on YouTube's algorithm, not the app.
+  </Card>
+  
+  <Card title="Language Settings" icon="language">
+    Select interface language and preferred subtitle languages for videos.
+  </Card>
+  
+  <Card title="SponsorBlock" icon="forward">
+    Configure automatic skipping of sponsored segments, intros, outros, and other video segments.
+  </Card>
+  
+  <Card title="AFR (Auto Frame Rate)" icon="display">
+    Adjust TV refresh rate to match video content. Most users should keep this off unless testing.
+  </Card>
+</CardGroup>
+
+### Auto Frame Rate (AFR)
+
+<Accordion title="What is AFR?">
+  **AFR = Auto Frame Rate**
+  
+  It adjusts your TV's refresh rate to match the content you're watching.
+  
+  **Benefits:**
+  - Slightly smoother playback
+  - Eliminates judder on some displays
+  - The difference is very small
+  
+  **Drawbacks:**
+  - Doesn't work well on all hardware
+  - May cause screen blanking during transitions
+  - Most people barely notice the improvement
+  
+  <Tip>
+  **Recommendation:** You can turn AFR on to see if it works on your device. If it causes issues or you don't care to test, turn it **off**.
+  </Tip>
+</Accordion>
+
+## Related Configuration
+
+<CardGroup cols={3}>
+  <Card title="Video Quality" icon="video" href="/configuration/video-quality">
+    Configure default quality presets and resolution settings
+  </Card>
+  
+  <Card title="Video Codecs" icon="film" href="/configuration/video-codecs">
+    Choose between AV1, VP9, and AVC codecs
+  </Card>
+  
+  <Card title="Remote Control" icon="remote" href="/configuration/remote-control">
+    Set up device pairing and TV code linking
+  </Card>
+</CardGroup>

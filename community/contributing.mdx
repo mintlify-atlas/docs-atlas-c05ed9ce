@@ -1,0 +1,189 @@
+---
+title: "Contributing to SmartTube"
+description: "Help improve SmartTube through translations, bug reports, testing, and code contributions"
+---
+
+SmartTube is a community-driven project that welcomes contributions from everyone. Whether you're a developer, translator, or enthusiastic user, there are many ways to help!
+
+## Ways to Contribute
+
+<CardGroup cols={2}>
+  <Card title="Translations" icon="language">
+    Help translate SmartTube into your language using the online translation tool
+  </Card>
+  
+  <Card title="Bug Reports" icon="bug">
+    Report issues you encounter to help improve stability and features
+  </Card>
+  
+  <Card title="Testing" icon="flask">
+    Test beta releases and provide feedback on new features
+  </Card>
+  
+  <Card title="Code Contributions" icon="code">
+    Submit pull requests with bug fixes or new features
+  </Card>
+</CardGroup>
+
+## Translating SmartTube
+
+Help make SmartTube accessible to users worldwide by contributing translations.
+
+### Translation Tool
+
+Use the online Android strings.xml translator:
+
+**[Android Strings.xml Translator](https://jtbrinkmann.de/tools/android-strings-xml-translator.html)**
+
+<Steps>
+  <Step title="Load the English strings file">
+    Get the current English strings.xml from the SmartTube repository
+  </Step>
+  
+  <Step title="Select your language">
+    Choose the language you want to translate to
+  </Step>
+  
+  <Step title="Translate the strings">
+    Translate each string, maintaining placeholders like `%s` and `%d`
+  </Step>
+  
+  <Step title="Submit your translation">
+    Send the translated file via [GitHub Issues](https://github.com/yuliskov/SmartTube/issues) or email to firsthash@gmail.com
+  </Step>
+</Steps>
+
+<Note>
+  Some translations visible on [GitHub contributors](https://github.com/yuliskov/SmartTube/graphs/contributors) were submitted directly to the developer. Your contribution will be credited!
+</Note>
+
+## Reporting Bugs and Issues
+
+Good bug reports help improve SmartTube for everyone.
+
+### Before Reporting
+
+1. **Check the [FAQ](/faq)** - your issue might already be documented
+2. **Search existing issues** on [GitHub](https://github.com/yuliskov/SmartTube/issues)
+3. **Try to reproduce** the issue consistently
+4. **Update to the latest version** to see if it's already fixed
+
+### Writing a Good Bug Report
+
+Include the following information:
+
+```markdown
+**Device Information:**
+- Device model: (e.g., Fire TV Stick 4K, NVIDIA Shield)
+- Android version: (e.g., Android 9.0)
+- SmartTube version: (e.g., 30.98)
+- Build flavor: (beta/stable/fdroid)
+
+**Issue Description:**
+- Clear description of the problem
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+
+**Additional Context:**
+- Screenshots or screen recordings
+- Error messages or logs
+- When the issue started occurring
+```
+
+<Warning>
+  For crashes or "unknown codec" errors, include the exact error message if possible.
+</Warning>
+
+## Testing Beta Releases
+
+Help test new features before they reach stable release.
+
+### How to Help Test
+
+- **Install the beta version** using `kutt.it/stn_beta`
+- **Test new features** mentioned in changelogs
+- **Report any issues** on GitHub or Telegram
+- **Provide feedback** on user experience
+
+<Info>
+  Beta releases get new features and bug fixes faster than stable. The built-in updater will notify you of new versions with a changelog.
+</Info>
+
+## Code Contributions
+
+Developers can contribute code improvements and new features.
+
+### Getting Started
+
+<Steps>
+  <Step title="Fork the repository">
+    Fork [yuliskov/SmartTube](https://github.com/yuliskov/SmartTube) on GitHub
+  </Step>
+  
+  <Step title="Set up development environment">
+    See the [Building from Source](/community/building) guide for setup instructions
+  </Step>
+  
+  <Step title="Create a feature branch">
+    ```bash
+    git checkout -b feature/your-feature-name
+    ```
+  </Step>
+  
+  <Step title="Make your changes">
+    Write clean, well-documented code following existing patterns
+  </Step>
+  
+  <Step title="Test thoroughly">
+    Test on multiple devices if possible, especially changes to video playback
+  </Step>
+  
+  <Step title="Submit a pull request">
+    Submit your PR with a clear description of changes and why they're needed
+  </Step>
+</Steps>
+
+### Code Guidelines
+
+- Follow existing code style and patterns
+- Comment complex logic or workarounds
+- Test on Android TV devices, not just emulators
+- Keep changes focused - one feature or fix per PR
+- Update documentation if needed
+
+<Note>
+  SmartTube is primarily developed by Yurii Lyskov as a hobby project. Be patient with review times, and understand that not all contributions may be accepted.
+</Note>
+
+## Areas That Need Help
+
+From the developer:
+
+### UI/UX Improvements
+
+> "Stock YouTube and YT Kids are far ahead [in UI]. We'd need someone who's skilled and willing to dedicate enough time and energy into making it. And into maintaining it longterm (incl. new features, bug fixes). All of this for free."
+
+If you have UI/UX skills for Android TV apps, your help would be invaluable.
+
+### Search Page Enhancement
+
+> "It can be improved, but it takes someone to do it... Maybe a future SmartTube update can add an embedded keyboard, similar to the original YouTube or other major Android TV apps."
+
+Improving the search experience would benefit all users.
+
+## Recognition
+
+Contributors are recognized through:
+
+- **GitHub contributors page**: [View contributors](https://github.com/yuliskov/SmartTube/graphs/contributors)
+- **Credits in the app**: Translation and code contributors
+- **Community appreciation**: The gratitude of thousands of SmartTube users!
+
+## Contact
+
+Questions about contributing?
+
+- **GitHub Issues**: [yuliskov/SmartTube/issues](https://github.com/yuliskov/SmartTube/issues)
+- **Email**: firsthash@gmail.com
+- **Telegram**: [@SmartTubeEN](http://t.me/SmartTubeEN)

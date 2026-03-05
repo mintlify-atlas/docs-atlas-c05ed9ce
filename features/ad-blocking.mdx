@@ -1,0 +1,173 @@
+---
+title: "Ad Blocking"
+description: "Experience truly ad-free YouTube on your Android TV with SmartTube's built-in ad blocking"
+---
+
+SmartTube provides a completely ad-free viewing experience. No pre-roll ads, no mid-roll interruptions, no banner ads - nothing.
+
+## How It Works
+
+<Info>
+SmartTube doesn't just "block" ads - it's literally programmed to be **completely unable** to display any ads whatsoever.
+</Info>
+
+Unlike traditional ad blockers that try to filter out ads, SmartTube's architecture is fundamentally designed without any ad display capability. This means:
+
+- **No pre-roll ads** before videos start
+- **No mid-roll ads** interrupting your viewing
+- **No banner ads** cluttering the interface
+- **No ad overlays** covering the video
+- **No promotional cards** during playback
+
+### Technical Approach
+
+SmartTube achieves ad-free playback by:
+
+1. **Requesting ad-free streams** from YouTube's API
+2. **Parsing video data** without ad markers
+3. **Building the player** without ad display components
+4. **Direct video playback** bypassing YouTube's ad injection system
+
+This architectural approach means YouTube **cannot** slip ads in, even if they try. The code simply doesn't exist to render them.
+
+## No Whitelisting
+
+<Warning>
+You **cannot** allow ads or whitelist specific channels in SmartTube.
+</Warning>
+
+Because SmartTube is built without ad display functionality, there's no mechanism to selectively show ads for certain creators. This is a fundamental limitation of the architecture.
+
+### Why No Whitelisting?
+
+Adding ad whitelisting would require:
+- Implementing ad display code (which doesn't exist)
+- Maintaining YouTube's ad API integration
+- Significant development time for a feature that contradicts the app's purpose
+
+**Alternative**: If you want to support your favorite creators, consider:
+- Direct Patreon/Ko-fi support
+- Channel memberships through the YouTube website
+- Merchandise purchases
+- Super Thanks on the official YouTube app
+
+These methods provide **more direct support** to creators than ad revenue.
+
+## Comparison with Other Solutions
+
+<CardGroup cols={2}>
+  <Card title="SmartTube">
+    **Advantages:**
+    - 100% ad-free, guaranteed
+    - Cannot be bypassed by YouTube
+    - No maintenance needed
+    - Works offline
+    - No performance impact
+    
+    **Disadvantages:**
+    - Cannot whitelist channels
+    - Creators don't receive ad revenue
+  </Card>
+  
+  <Card title="Browser Ad Blockers">
+    **Advantages:**
+    - Can whitelist channels
+    - Configurable rules
+    
+    **Disadvantages:**
+    - May break occasionally
+    - Requires updates
+    - YouTube actively fights them
+    - Not available on most TVs
+    - Performance impact
+  </Card>
+</CardGroup>
+
+<CardGroup cols={2}>
+  <Card title="YouTube Premium">
+    **Advantages:**
+    - Supports creators
+    - Official YouTube features
+    - Downloads
+    - YouTube Music included
+    
+    **Disadvantages:**
+    - Monthly subscription cost
+    - Not available in all countries
+    - Requires Google account
+    - Limited to one ecosystem
+  </Card>
+  
+  <Card title="DNS-based Blocking">
+    **Advantages:**
+    - Network-wide blocking
+    - Works on all devices
+    
+    **Disadvantages:**
+    - May break other services
+    - Requires network configuration
+    - Not effective for YouTube
+    - Can slow down connections
+  </Card>
+</CardGroup>
+
+## In-Video Sponsorships
+
+<Note>
+SmartTube cannot block ads that are **embedded directly in the video** by the creator (sponsored segments).
+</Note>
+
+When creators include sponsored messages as part of their video content, these aren't technically "ads" from YouTube's perspective - they're part of the video itself.
+
+**Solution**: Use [SponsorBlock](/features/sponsorblock) to automatically skip these segments!
+
+SponsorBlock is a community-powered feature that identifies and skips:
+- Sponsored segments
+- Unpaid promotions
+- Interaction reminders ("like and subscribe")
+- Intros and outros
+- Non-music sections in music videos
+- And more
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+  <Accordion title="Is ad blocking legal?">
+    Ad blocking itself is legal in most jurisdictions. However, the legality of accessing YouTube content without ads may vary by country and YouTube's Terms of Service. Users should review their local laws and YouTube's policies.
+  </Accordion>
+  
+  <Accordion title="Will YouTube ban my account for using SmartTube?">
+    SmartTube uses YouTube's public APIs in a way similar to other third-party clients. While it's theoretically possible, there are no widespread reports of account bans specifically due to SmartTube usage. That said, use at your own discretion.
+  </Accordion>
+  
+  <Accordion title="Why can't I support creators with ads?">
+    Due to SmartTube's architecture, ad display functionality simply doesn't exist. Consider supporting creators through direct methods like Patreon, memberships, or merchandise - these provide significantly better support than ad revenue.
+  </Accordion>
+  
+  <Accordion title="Does this work on all videos?">
+    Yes, SmartTube's ad-free experience works on all videos, including:
+    - Regular videos
+    - Live streams
+    - Premieres
+    - Music videos
+    - Age-restricted content (if logged in)
+  </Accordion>
+  
+  <Accordion title="Can YouTube force ads in a future update?">
+    No. SmartTube's architecture fundamentally lacks ad rendering capabilities. YouTube cannot inject ads into an app that has no code to display them. The only way this could change is if YouTube blocked third-party API access entirely.
+  </Accordion>
+</AccordionGroup>
+
+## Performance Benefits
+
+Ad-free playback isn't just about convenience - it also provides technical benefits:
+
+- **Faster loading times** - no waiting for ad servers
+- **Lower bandwidth usage** - no downloading ad content
+- **Reduced buffering** - smoother playback without ad transitions
+- **Better battery life** - less processing for ad rendering (if using a portable TV device)
+- **Consistent experience** - no jarring interruptions
+
+<Tip>
+Combine SmartTube's ad blocking with [SponsorBlock](/features/sponsorblock) for the ultimate uninterrupted viewing experience!
+</Tip>

@@ -1,0 +1,296 @@
+---
+title: Installation
+description: Step-by-step guide to install SmartTube on your Android TV device
+---
+
+# Installing SmartTube
+
+SmartTube is easy to install on any Android TV device. Follow the instructions below to get started.
+
+<Warning>
+**Important Security Notice**
+
+Do **not** download SmartTube from any app store, APK websites, or blogs. These versions were uploaded by third parties and may contain malware or ads. SmartTube is not officially published on any app store.
+
+Always download from the official sources listed below.
+</Warning>
+
+## Choosing Your Version
+
+SmartTube offers two release channels:
+
+<CardGroup cols={2}>
+  <Card title="Beta Release" icon="flask" color="#0ea5e9">
+    **Recommended for most users**
+    
+    Gets new features and bugfixes faster. Generally stable for daily use.
+    
+    Download URL: `kutt.it/stn_beta`
+  </Card>
+  <Card title="Stable Release" icon="shield-check" color="#10b981">
+    **For maximum stability**
+    
+    Tested and proven stable. Updates less frequently.
+    
+    Download URL: `kutt.it/stn_stable`
+  </Card>
+</CardGroup>
+
+## Installation Methods
+
+Choose the method that works best for you:
+
+<Tabs>
+  <Tab title="Downloader App (Easiest)">
+    <Steps>
+      <Step title="Install Downloader by AFTVnews">
+        Get the [Downloader app](https://www.aftvnews.com/downloader/) from your device's app store (Google Play Store or Amazon AppStore).
+      </Step>
+      
+      <Step title="Open Downloader and enter URL">
+        Launch the Downloader app and enter one of these URLs:
+        
+        - **Beta version**: `kutt.it/stn_beta`
+        - **Stable version**: `kutt.it/stn_stable`
+        
+        <Tip>
+        You can also enter **79015** (for beta) or **28544** (for stable), but this requires the AFTVnews Downloader browser addon to be installed first.
+        </Tip>
+      </Step>
+      
+      <Step title="Confirm security prompts">
+        Read and understand the security prompts, then confirm to proceed with the installation.
+      </Step>
+      
+      <Step title="Install the APK">
+        Wait for the download to complete, then tap **Install** when prompted.
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="File Transfer">
+    <Steps>
+      <Step title="Install a file transfer app on your TV">
+        Install an app like [Send Files to TV](https://sendfilestotv.app/) from the Google Play Store or Amazon AppStore on both your TV and phone.
+      </Step>
+      
+      <Step title="Download SmartTube APK on your phone/computer">
+        Download the APK from:
+        - [Beta download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
+        - [Stable download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
+      </Step>
+      
+      <Step title="Transfer the APK to your TV">
+        Use the file transfer app to send the APK from your phone/computer to your Android TV.
+      </Step>
+      
+      <Step title="Install the APK on your TV">
+        Open the transferred APK file on your TV and follow the installation prompts.
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="USB Stick">
+    <Steps>
+      <Step title="Download SmartTube APK">
+        Download the APK to your computer:
+        - [Beta download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk)
+        - [Stable download](https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk)
+      </Step>
+      
+      <Step title="Copy APK to USB stick">
+        Copy the downloaded APK file to a USB flash drive.
+      </Step>
+      
+      <Step title="Install a file manager on your TV">
+        Install a file manager app from the Google Play Store or Amazon AppStore. Recommended apps:
+        - [FX File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)
+        - [X-plore File Manager](https://play.google.com/store/apps/details?id=com.lonelycatgames.Xplore)
+        
+        <Warning>
+        Android's preinstalled file manager does **not** work for installing APKs. Do not use the ad-infested FileCommander.
+        </Warning>
+      </Step>
+      
+      <Step title="Connect USB and install">
+        Plug the USB stick into your TV, open the file manager, navigate to the APK file, and install it.
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="ADB (Advanced)">
+    <Steps>
+      <Step title="Enable Developer Options and ADB Debugging">
+        On your Android TV:
+        1. Go to **Settings** > **Device Preferences** > **About**
+        2. Click on **Build** repeatedly until "You are now a developer" appears
+        3. Go back to **Device Preferences** > **Developer options**
+        4. Enable **USB debugging** and **ADB debugging**
+      </Step>
+      
+      <Step title="Install ADB on your computer">
+        Download and install [ADB (Android Debug Bridge)](https://developer.android.com/studio/releases/platform-tools) on your computer.
+      </Step>
+      
+      <Step title="Connect to your TV">
+        Find your TV's IP address in **Settings** > **Network**.
+        
+        Open a terminal/command prompt and run:
+        ```bash
+        adb connect YOUR_TV_IP_ADDRESS
+        ```
+      </Step>
+      
+      <Step title="Download and install SmartTube">
+        Download the APK, then install it via ADB:
+        ```bash
+        adb install smarttube_beta.apk
+        ```
+        
+        For more detailed guides:
+        - [FossBytes ADB sideloading guide](https://fossbytes.com/side-load-apps-android-tv/#h-how-to-sideload-apps-on-your-android-tv-using-adb)
+        - [AFTVnews sideloading guide](https://www.aftvnews.com/sideload/)
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Device-Specific Instructions
+
+### Chromecast with Google TV
+
+Chromecast with Google TV blocks app installation by default. Follow these additional steps:
+
+<Steps>
+  <Step title="Enable Developer Options">
+    On your Chromecast:
+    1. Open the side menu and go to **Settings** > **System** > **About**
+    2. Scroll down to **Android TV OS build**
+    3. Click it repeatedly until you see a message saying you're steps away from being a developer
+    4. Continue clicking until developer mode is enabled
+    
+    ![Enable Developer Options](https://www.androidpolice.com/2021/02/07/how-to-sideload-any-apk-on-the-chromecast-with-android-tv/#install-the-apk)
+  </Step>
+  
+  <Step title="Enable Unknown Sources">
+    1. Go back to the main **Settings** page
+    2. Select **Apps** > **Security & Restrictions** > **Unknown sources**
+    3. Enable the toggle for **Downloader by AFTVnews** (or whichever app you're using to install)
+  </Step>
+  
+  <Step title="Follow general installation steps">
+    Now you can proceed with any of the [installation methods](#installation-methods) above.
+  </Step>
+</Steps>
+
+### Xiaomi Devices with Chinese Firmware
+
+<Warning>
+Xiaomi's Chinese firmware may block installation of the beta version. The international firmware is not affected.
+</Warning>
+
+**Solutions:**
+
+<AccordionGroup>
+  <Accordion title="Solution 1: Use Stable Version (Recommended)">
+    Install SmartTube's **stable version** instead of beta. The stable version is not blocked by Chinese firmware.
+    
+    Use URL: `kutt.it/stn_stable`
+  </Accordion>
+  
+  <Accordion title="Solution 2: Flash International Firmware">
+    Flash the international firmware for your device. Search for a guide specific to your Xiaomi device model.
+  </Accordion>
+  
+  <Accordion title="Solution 3: Factory Reset Method (2020 or older devices)">
+    For devices from 2020 or before:
+    1. Perform a factory reset
+    2. Install SmartTube beta **before** doing any system updates
+    3. After SmartTube is installed, you can safely update your system
+    
+    SmartTube should continue working after system updates.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting Installation Issues
+
+<AccordionGroup>
+  <Accordion title="Installation fails immediately">
+    **Possible causes:**
+    
+    1. **Disk space is full** - Clear up storage space on your device
+    2. **APK file didn't download correctly** - Try downloading again
+    3. **Unknown sources not enabled** - Enable installation from unknown sources for your file manager/downloader app
+    
+    **Solution:** Clear storage space and try downloading/installing again.
+  </Accordion>
+  
+  <Accordion title="App crashes when opening">
+    **Cause:** SmartTube is installed to external storage (SD card).
+    
+    **Solution:** Uninstall and reinstall SmartTube to **internal memory**, not to an SD card or external storage.
+  </Accordion>
+  
+  <Accordion title="Cannot find the installed app">
+    **Solution:** Check your app launcher. SmartTube should appear in your list of installed apps. If not, try reinstalling.
+  </Accordion>
+  
+  <Accordion title="'Parse error' during installation">
+    **Cause:** Corrupted APK download.
+    
+    **Solution:** Delete the APK file and download it again from the official sources.
+  </Accordion>
+</AccordionGroup>
+
+## Download Links
+
+<Info>
+All downloads are hosted on GitHub and are scanned with VirusTotal for security.
+</Info>
+
+### Direct Download Links
+
+<CardGroup cols={2}>
+  <Card title="Beta Version" icon="flask" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_beta.apk">
+    **Latest Beta APK**
+    
+    Recommended for most users. Gets updates faster.
+  </Card>
+  <Card title="Stable Version" icon="shield-check" href="https://github.com/yuliskov/SmartTube/releases/download/latest/smarttube_stable.apk">
+    **Latest Stable APK**
+    
+    Maximum stability. Updates less frequently.
+  </Card>
+</CardGroup>
+
+### Alternative Download Methods
+
+- **Telegram Channel**: [@SmartTubeNewsEN](https://t.me/s/SmartTubeNewsEN) - All releases with changelog (no account required)
+- **GitHub Releases**: [github.com/yuliskov/SmartTube/releases](https://github.com/yuliskov/SmartTube/releases)
+
+## Updating SmartTube
+
+<Note>
+SmartTube has a **built-in updater**. You only need to follow the installation procedure once.
+</Note>
+
+After launching SmartTube, it will automatically check for updates and notify you with a changelog. To update:
+
+1. Wait for the update notification (appears a few seconds after launch)
+2. Follow the prompts to download and install the update
+3. Or manually check: **Settings** > **About** > **Check for updates**
+
+**If update installation fails:**
+- Your disk space might be full - clear up storage space
+- Try updating again from **Settings** > **About** > **Check for updates**
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Quick Start Guide" icon="rocket" href="/quick-start">
+    Learn how to set up and use SmartTube for the first time
+  </Card>
+  <Card title="Features Overview" icon="star" href="/features/overview">
+    Explore all the features SmartTube offers
+  </Card>
+</CardGroup>

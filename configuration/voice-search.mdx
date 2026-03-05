@@ -1,0 +1,417 @@
+---
+title: Voice Search Setup
+description: Enable global voice search in SmartTube by installing bridge apps for Fire TV, Chromecast with Google TV, and other Android devices
+---
+
+SmartTube supports global voice search through an additional bridge app. This allows the system's voice search to open SmartTube instead of the official YouTube app.
+
+<Info>
+Voice search requires installing a separate bridge app alongside SmartTube. The bridge app intercepts system attempts to open the official YouTube app.
+</Info>
+
+## Requirements and Limitations
+
+Before setting up voice search, understand these requirements:
+
+<CardGroup cols={2}>
+  <Card title="Bridge App Required" icon="bridge">
+    An additional app must be installed to intercept voice search requests and redirect them to SmartTube.
+  </Card>
+  
+  <Card title="YouTube App Removal" icon="trash">
+    The official YouTube app must be uninstalled for voice search to work with SmartTube.
+  </Card>
+  
+  <Card title="Device-Specific Apps" icon="tv">
+    Different bridge apps are needed for Fire TV vs Chromecast vs other Android devices.
+  </Card>
+  
+  <Card title="Voice Command Format" icon="microphone">
+    On some devices, you must explicitly say "YouTube" in your search (e.g., "YouTube cute cats").
+  </Card>
+</CardGroup>
+
+<Warning>
+You must uninstall the original YouTube app for the bridge to work. You can always reinstall it later if you change your mind.
+</Warning>
+
+## Installation by Device Type
+
+### Amazon Fire TV
+
+Fire TV devices do not require root access for voice search functionality.
+
+<Steps>
+  <Step title="Uninstall Official YouTube App">
+    Remove the official YouTube app from your Fire TV:
+    
+    1. Go to Fire TV **Settings**
+    2. Navigate to **Applications** → **Manage Installed Applications**
+    3. Find **YouTube**
+    4. Select **Uninstall**
+    5. Confirm the uninstallation
+    
+    <Info>
+    No root required - Fire TV allows uninstalling the YouTube app normally.
+    </Info>
+  </Step>
+  
+  <Step title="Download Bridge App">
+    Download the Amazon Bridge SmartTube app:
+    
+    **Bridge App URL:** `https://kutt.it/stn_bridge_amazon`
+    
+    **Installation methods:**
+    - Use **Downloader by AFTVnews** app
+    - Enter the URL above in Downloader
+    - Or use a file transfer app from your phone/computer
+  </Step>
+  
+  <Step title="Install Bridge App">
+    1. Open the downloaded APK file
+    2. Confirm installation prompts
+    3. Allow installation from unknown sources if prompted
+    4. Wait for installation to complete
+    
+    <Tip>
+    The bridge app will not show up in your launcher - it runs invisibly in the background.
+    </Tip>
+  </Step>
+  
+  <Step title="Test Voice Search">
+    Test the voice search functionality:
+    
+    1. Press the **voice button** on your Fire TV remote
+    2. Say a search query (e.g., "cute cats" or "YouTube cute cats")
+    3. SmartTube should open with search results
+    4. If it opens the wrong app, ensure YouTube is fully uninstalled
+  </Step>
+</Steps>
+
+### Chromecast with Google TV
+
+Chromecast with Google TV devices also do not require root for voice search.
+
+<Steps>
+  <Step title="Uninstall Official YouTube App">
+    Remove the official YouTube app:
+    
+    1. On Chromecast, go to **Settings**
+    2. Navigate to **Apps** → **See all apps**
+    3. Find **YouTube**
+    4. Select **Uninstall** (or **Disable** if uninstall isn't available)
+    5. Confirm the action
+    
+    <Info>
+    No root required - Chromecast allows removing the YouTube app without special tools.
+    </Info>
+  </Step>
+  
+  <Step title="Download ATV Bridge App">
+    Download the Android TV Bridge SmartTube app:
+    
+    **Bridge App URL:** `https://kutt.it/stn_bridge_atv`
+    
+    **Installation methods:**
+    - Use **Downloader by AFTVnews** app (install it first if needed)
+    - Enter the URL above in Downloader
+    - Or transfer the APK from another device
+  </Step>
+  
+  <Step title="Install Bridge App">
+    1. Open the downloaded APK file
+    2. Confirm security prompts and allow installation
+    3. Enable "Unknown sources" for your file manager if prompted
+    4. Complete the installation
+    
+    <Note>
+    The bridge app is invisible - it won't appear in your app drawer or launcher.
+    </Note>
+  </Step>
+  
+  <Step title="Test Voice Search">
+    Verify voice search is working:
+    
+    1. Press the **Google Assistant button** on your remote
+    2. Say a search query (try "YouTube cute cats")
+    3. SmartTube should open with the search results
+    4. Some queries may require saying "YouTube" explicitly
+  </Step>
+</Steps>
+
+<Tip>
+On Chromecast with Google TV, you may need to explicitly say "YouTube" in your voice search (e.g., "YouTube cute cats" instead of just "cute cats").
+</Tip>
+
+### Other Android TV Devices (Root Required)
+
+For all other Android TV devices (excluding Fire TV and Chromecast), root access is required.
+
+<Warning>
+**Root access required!** This is significantly more complex and requires technical expertise. Proceed only if you're comfortable with rooting.
+</Warning>
+
+<Steps>
+  <Step title="Root Your Device">
+    Root your Android TV device:
+    
+    1. Search for a rooting guide specific to your device model
+    2. Follow the guide carefully (varies by manufacturer)
+    3. Verify root access is working
+    4. Install root management apps (like Magisk or SuperSU)
+    
+    <Warning>
+    Rooting voids warranties and can brick your device if done incorrectly. Proceed at your own risk!
+    </Warning>
+  </Step>
+  
+  <Step title="Uninstall YouTube with Root">
+    Use ADB with root to uninstall the system YouTube app:
+    
+    ```bash
+    adb shell
+    su
+    pm uninstall com.google.android.youtube.tv
+    ```
+    
+    **Alternative:** Use a root app like Titanium Backup or System App Remover
+    
+    <Info>
+    Root is required because the YouTube app is usually a system app that cannot be uninstalled normally.
+    </Info>
+  </Step>
+  
+  <Step title="Download ATV Bridge App">
+    Download the Android TV Bridge SmartTube app:
+    
+    **Bridge App URL:** `https://kutt.it/stn_bridge_atv`
+    
+    Use Downloader by AFTVnews or transfer the APK manually.
+  </Step>
+  
+  <Step title="Install Bridge App">
+    1. Open the downloaded APK file
+    2. Allow installation from unknown sources
+    3. Complete the installation process
+    4. The bridge app will run invisibly in the background
+  </Step>
+  
+  <Step title="Test Voice Search">
+    Test the voice search functionality:
+    
+    1. Use your remote's voice search button
+    2. Say a search query
+    3. SmartTube should open with results
+    4. May require saying "YouTube" in the query
+  </Step>
+</Steps>
+
+## Bridge App Types
+
+Two different bridge apps are available depending on your device:
+
+<Tabs>
+  <Tab title="Amazon Bridge">
+    **For Amazon Fire TV devices only**
+    
+    **Download URL:** `https://kutt.it/stn_bridge_amazon`
+    
+    ✅ **Compatible with:**
+    - Fire TV Stick (all generations)
+    - Fire TV Cube
+    - Fire TV Edition TVs
+    
+    ❌ **Not compatible with:**
+    - Chromecast with Google TV
+    - Other Android TV devices
+    
+    <Info>
+    The Amazon bridge is specifically designed for Fire TV's unique system architecture.
+    </Info>
+  </Tab>
+  
+  <Tab title="ATV Bridge">
+    **For Android TV and Chromecast devices**
+    
+    **Download URL:** `https://kutt.it/stn_bridge_atv`
+    
+    ✅ **Compatible with:**
+    - Chromecast with Google TV
+    - Standard Android TV devices
+    - Google TV devices
+    - Generic Android TV boxes
+    
+    ❌ **Not compatible with:**
+    - Amazon Fire TV (use Amazon bridge instead)
+    
+    <Info>
+    ATV bridge works with standard Android TV operating systems, including Chromecast with Google TV.
+    </Info>
+  </Tab>
+</Tabs>
+
+## Understanding Bridge Functionality
+
+<Accordion title="How the Bridge App Works">
+  The bridge app acts as an interceptor:
+  
+  1. **System voice search** attempts to open YouTube
+  2. **Bridge app intercepts** the system intent
+  3. **Redirects to SmartTube** instead of YouTube
+  4. **SmartTube opens** with the search query
+  
+  **Why it's invisible:**
+  - The bridge app has no user interface
+  - It only runs when the system tries to open YouTube
+  - Cannot be launched directly
+  - Doesn't appear in app drawer or launcher
+  
+  <Info>
+  The bridge app will not show up in your launcher because it's not meant to be opened directly - it only intercepts system requests.
+  </Info>
+</Accordion>
+
+<Accordion title="Why YouTube App Must Be Removed">
+  The official YouTube app must be uninstalled because:
+  
+  - Android prioritizes system apps over user apps
+  - If YouTube is present, the system opens it directly
+  - The bridge can only intercept if YouTube is absent
+  - This is an Android OS limitation, not a SmartTube limitation
+  
+  **Can I keep both?**
+  No, voice search will not work if both apps are installed. However:
+  - You can manually open either app at any time
+  - Only voice search functionality requires removing YouTube
+  - You can reinstall YouTube if you change your mind
+</Accordion>
+
+## Troubleshooting Voice Search
+
+<Accordion title="Voice search opens YouTube instead of SmartTube">
+  **Solutions:**
+  
+  1. **Verify YouTube is uninstalled**: Check your app list thoroughly
+  2. **Check system apps**: YouTube might be hidden in system apps
+  3. **Restart device**: Reboot your TV after installing the bridge
+  4. **Reinstall bridge**: Uninstall and reinstall the bridge app
+  5. **Clear defaults**: Clear default app associations in Android settings
+</Accordion>
+
+<Accordion title="Voice search doesn't work at all">
+  **Diagnosis steps:**
+  
+  1. **Check bridge installation**: Verify the bridge app installed correctly
+  2. **Correct bridge type**: Use Amazon bridge for Fire TV, ATV bridge for others
+  3. **SmartTube installed**: Ensure SmartTube itself is properly installed
+  4. **Microphone working**: Test if microphone works in other apps
+  5. **Voice search enabled**: Check if voice search is enabled in TV settings
+</Accordion>
+
+<Accordion title="Need to say 'YouTube' in every query">
+  **This is normal on some devices!**
+  
+  On certain Android TV devices, you must explicitly say "YouTube" when searching:
+  
+  ✅ **Say:** "YouTube cute cats"  
+  ❌ **Don't say:** "cute cats" (may not work)
+  
+  **Why this happens:**
+  - Different devices handle voice search differently
+  - Some require app context keywords
+  - This is device-dependent, not a SmartTube issue
+  
+  <Tip>
+  If voice search isn't working, try adding "YouTube" to the beginning of your query.
+  </Tip>
+</Accordion>
+
+<Accordion title="Android 11 - no search results">
+  **Known issue on Android 11:**
+  
+  Some reports indicate the latest update for "Google app for Android TV" could cause this bug.
+  
+  **Solution:**
+  1. Go to Android TV **Settings**
+  2. Navigate to **Apps** → **See all apps**
+  3. Find **Google** app
+  4. Select **Uninstall updates**
+  5. Restart your device
+  
+  This should restore voice search functionality.
+</Accordion>
+
+## Voice Search Performance
+
+<Note>
+Voice search and casting performance in SmartTube may be inferior to official apps, depending on your device. This is a limitation of being a third-party app.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Accuracy" icon="bullseye">
+    Voice recognition accuracy depends on your TV's microphone and Google's voice processing, not SmartTube.
+  </Card>
+  
+  <Card title="Speed" icon="bolt">
+    Search may be slightly slower than the official app due to the bridge redirection process.
+  </Card>
+  
+  <Card title="Supported Languages" icon="language">
+    Language support depends on your device's Google Assistant configuration.
+  </Card>
+  
+  <Card title="Complex Queries" icon="message">
+    Simple searches work best - complex queries may not be interpreted correctly.
+  </Card>
+</CardGroup>
+
+## Security and Privacy
+
+<Accordion title="Is the Bridge App Safe?">
+  **Yes, the bridge app is safe:**
+  
+  - ✅ Official SmartTube bridge app
+  - ✅ Open-source project
+  - ✅ No data collection
+  - ✅ Only intercepts YouTube intents
+  - ✅ No network permissions
+  
+  <Warning>
+  Only download the bridge app from the official URLs provided:
+  - Fire TV: `kutt.it/stn_bridge_amazon`
+  - Android TV: `kutt.it/stn_bridge_atv`
+  
+  Do not download from third-party APK sites!
+  </Warning>
+</Accordion>
+
+## Uninstalling Voice Search
+
+If you want to remove voice search functionality:
+
+<Steps>
+  <Step title="Uninstall Bridge App">
+    1. Go to **Settings** → **Apps**
+    2. Find the bridge app (may be hidden in system apps)
+    3. Select **Uninstall**
+  </Step>
+  
+  <Step title="Reinstall YouTube (Optional)">
+    If you want the official YouTube app back:
+    1. Open Google Play Store
+    2. Search for "YouTube for Android TV"
+    3. Install the official app
+  </Step>
+</Steps>
+
+## Related Configuration
+
+<CardGroup cols={2}>
+  <Card title="Remote Control" icon="remote" href="/configuration/remote-control">
+    Set up casting and remote control pairing with TV codes
+  </Card>
+  
+  <Card title="Settings Overview" icon="gear" href="/configuration/settings">
+    Explore all SmartTube configuration options
+  </Card>
+</CardGroup>

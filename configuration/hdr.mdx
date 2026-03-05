@@ -1,0 +1,270 @@
+---
+title: HDR Configuration
+description: HDR support requirements, compatible formats, troubleshooting washed-out HDR, and device-specific limitations in SmartTube
+---
+
+HDR (High Dynamic Range) provides enhanced color depth and brightness range for supported content. SmartTube supports HDR playback, but it requires compatible hardware throughout your entire video chain.
+
+## HDR Requirements
+
+HDR works **only if your entire hardware chain supports it**. This is a complicated requirement with multiple potential points of failure.
+
+<Warning>
+**All components must support HDR** - if any single component in the chain lacks HDR support, HDR will not work.
+</Warning>
+
+### Hardware Chain Requirements
+
+<Steps>
+  <Step title="TV Must Support HDR">
+    Your television must have HDR capability:
+    - Check your TV specifications for HDR10, HDR10+, or Dolby Vision support
+    - Most TVs from 2017 onwards support at least HDR10
+    - Budget TVs may lack HDR support even if recent
+  </Step>
+  
+  <Step title="HDMI Cable Must Support HDR">
+    If using a TV box, your HDMI cable must support HDR:
+    - **HDMI 2.0a or newer** required for HDR
+    - Older HDMI cables (HDMI 1.4 or earlier) do not support HDR
+    - Yes, cable versions really matter!
+    - Use a certified Premium High Speed HDMI cable or Ultra High Speed HDMI cable
+    
+    <Info>
+    There truly are different HDMI cable versions with different HDR support capabilities. It's complicated, but necessary.
+    </Info>
+  </Step>
+  
+  <Step title="TV Box Must Support HDR">
+    If you're using an external Android TV box:
+    - The device must have HDR decoding capability
+    - Check device specifications for HDR10 support
+    - Not all Android TV boxes support HDR
+  </Step>
+  
+  <Step title="Device Must Support YouTube's HDR Format">
+    The device must support the **specific HDR format** used by YouTube:
+    - YouTube uses HDR10 (PQ transfer function)
+    - Some devices support HDR but not YouTube's specific format
+    - See device limitations section below
+  </Step>
+</Steps>
+
+<CardGroup cols={3}>
+  <Card title="TV" icon="tv">
+    Must support HDR10 or better
+  </Card>
+  <Card title="HDMI Cable" icon="cable-car">
+    HDMI 2.0a or newer
+  </Card>
+  <Card title="TV Box" icon="box">
+    HDR decoding + YouTube format
+  </Card>
+</CardGroup>
+
+## HDR Formats and YouTube
+
+YouTube uses specific HDR formats that may not be supported by all devices claiming "HDR support."
+
+<Accordion title="YouTube HDR Format Compatibility">
+  **YouTube's HDR Implementation:**
+  - YouTube uses **HDR10** with PQ (Perceptual Quantizer) transfer function
+  - Also known as SMPTE ST 2084
+  - This is different from other HDR formats like HLG (Hybrid Log-Gamma)
+  
+  **What this means:**
+  - A device might support HDR for other apps but not for YouTube
+  - YouTube HDR support is not universal even among HDR-capable devices
+  - Always verify "YouTube HDR" compatibility specifically
+</Accordion>
+
+<Accordion title="HDR Format Types">
+  Common HDR formats:
+  
+  | Format | YouTube Support | Notes |
+  |:-------|:---------------|:------|
+  | **HDR10** | ✅ Yes | YouTube's primary HDR format |
+  | **HDR10+** | ✅ Yes | Dynamic metadata, backward compatible with HDR10 |
+  | **Dolby Vision** | ❌ No | Not used by YouTube |
+  | **HLG** | ❌ No | Broadcast format, not used by YouTube |
+  
+  <Info>
+  SmartTube plays YouTube content, so only HDR10/HDR10+ compatibility matters for SmartTube users.
+  </Info>
+</Accordion>
+
+## Device-Specific Limitations
+
+### NVIDIA Shield
+
+<Warning>
+**NVIDIA Shield does not support YouTube HDR** despite supporting HDR in general.
+</Warning>
+
+<Accordion title="Why NVIDIA Shield Doesn't Work with YouTube HDR">
+  The NVIDIA Shield has a specific limitation:
+  
+  - ✅ The Shield **does** support HDR in general
+  - ✅ The Shield can play HDR content from many sources
+  - ❌ The Shield does **not** support the specific HDR format that YouTube uses
+  - ❌ This is a hardware/driver limitation, not a SmartTube issue
+  
+  **There is no workaround** - this is a fundamental incompatibility between NVIDIA Shield hardware and YouTube's HDR implementation.
+  
+  <Tip>
+  If YouTube HDR is important to you, consider a different Android TV device like Chromecast with Google TV (4K model) or a newer Android TV with certified YouTube HDR support.
+  </Tip>
+</Accordion>
+
+### Other Devices
+
+<Accordion title="Fire TV Stick">
+  **Fire TV Stick 4K and newer:**
+  - ✅ Supports HDR10 and HDR10+
+  - ✅ Works with YouTube HDR content
+  - ❌ Older Fire TV Stick models (non-4K) do not support HDR
+  
+  Verify your specific Fire TV model specifications.
+</Accordion>
+
+<Accordion title="Chromecast with Google TV">
+  **Chromecast with Google TV (4K):**
+  - ✅ Supports HDR10, HDR10+, and Dolby Vision
+  - ✅ Excellent YouTube HDR support
+  - ✅ One of the best devices for YouTube HDR
+  
+  **Chromecast with Google TV (HD):**
+  - ❌ Does not support HDR (1080p model)
+  
+  Make sure you have the 4K model for HDR.
+</Accordion>
+
+<Accordion title="Generic Android TV Boxes">
+  **Compatibility varies widely:**
+  - Check manufacturer specifications for "HDR10 support"
+  - Look for explicit "YouTube HDR" or "HDR10" certification
+  - Cheap no-name boxes often claim HDR but don't support it properly
+  - Read user reviews about HDR performance
+  
+  <Warning>
+  Many cheap Android TV boxes falsely advertise HDR support. Verify with user reviews before purchasing.
+  </Warning>
+</Accordion>
+
+## Troubleshooting HDR Issues
+
+### HDR Looks Washed Out or Dim
+
+<Accordion title="Fixing Washed Out HDR">
+  If HDR videos look dim or washed out, the issue is likely with your TV settings, not SmartTube.
+  
+  <Steps>
+    <Step title="Check TV HDR Mode">
+      - Verify HDR is actually enabled on your TV
+      - Check if your TV switched to HDR mode (usually shows an indicator)
+      - Some TVs require manual HDR mode activation
+    </Step>
+    
+    <Step title="Adjust TV Picture Settings">
+      - Increase brightness/backlight settings
+      - Adjust contrast for HDR mode
+      - Many TVs have separate settings for HDR vs SDR content
+      - Consult this guide: [Wired - HDR Too Dark Fix](https://www.wired.com/story/hdr-too-dark-how-to-fix-it/)
+    </Step>
+    
+    <Step title="Verify HDMI Input">
+      - Check your TV's HDMI input settings
+      - Some TVs require enabling "Enhanced HDMI" or "HDMI UHD Color"
+      - This is usually in TV settings under HDMI options
+    </Step>
+  </Steps>
+  
+  <Info>
+  Different TV manufacturers use different names: "HDMI Deep Color," "Enhanced Format," "UHD Color," or "Full UHD" - check your TV manual.
+  </Info>
+</Accordion>
+
+### HDR Not Working
+
+<Accordion title="HDR Content Not Playing in HDR">
+  **Diagnosis steps:**
+  
+  1. **Verify the video actually has HDR:**
+     - Not all YouTube videos have HDR versions
+     - Look for "HDR" in the quality selector
+     - Search for "HDR test" videos on YouTube
+  
+  2. **Check all hardware components:**
+     - TV supports HDR10 (check specifications)
+     - HDMI cable is version 2.0a or newer
+     - TV box/device supports HDR10
+     - All components properly connected
+  
+  3. **Enable HDR on TV:**
+     - Check TV settings for HDMI HDR enablement
+     - Look for "Enhanced HDMI," "HDMI UHD Color," or similar
+     - Enable for the HDMI port you're using
+  
+  4. **Verify device compatibility:**
+     - Some devices don't support YouTube's HDR format
+     - Check device-specific limitations (see above)
+     - NVIDIA Shield notably does not work with YouTube HDR
+  
+  <Warning>
+  If HDR is not working, it's probably not SmartTube's fault. The issue is almost always hardware compatibility or configuration.
+  </Warning>
+</Accordion>
+
+<Accordion title="How to Test HDR">
+  **Testing your HDR setup:**
+  
+  1. Search YouTube for "HDR test" or "4K HDR"
+  2. Select a video with HDR in the title
+  3. Press the **HQ** button while playing
+  4. Look for quality options labeled with **"HDR"**
+  5. Select an HDR quality option
+  6. Your TV should display an HDR indicator (varies by brand)
+  
+  **Good test videos:**
+  - "4K HDR Sample" videos
+  - "HDR vs SDR Comparison" videos
+  - "YouTube HDR Test" videos
+  
+  <Tip>
+  Your TV should show an on-screen indicator when HDR content is playing (e.g., "HDR," "HDR10," or a Dolby Vision logo).
+  </Tip>
+</Accordion>
+
+## HDR Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Verify Full Chain" icon="link">
+    Test each component individually: TV HDR capability, HDMI cable version, and device HDR support.
+  </Card>
+  
+  <Card title="Use Quality Cables" icon="cable-car">
+    Don't cheap out on HDMI cables - use certified Premium High Speed or Ultra High Speed cables.
+  </Card>
+  
+  <Card title="Enable Enhanced HDMI" icon="tv">
+    Check your TV settings and enable "Enhanced HDMI" or "UHD Color" for the HDMI port you're using.
+  </Card>
+  
+  <Card title="Calibrate TV Settings" icon="sliders">
+    Adjust brightness and contrast specifically for HDR mode - don't use SDR settings.
+  </Card>
+</CardGroup>
+
+## Additional Resources
+
+<Card title="Video Quality Settings" icon="gear" href="/configuration/video-quality">
+  Learn about resolution and quality settings for optimal playback
+</Card>
+
+<Card title="Video Codecs" icon="film" href="/configuration/video-codecs">
+  Understand which codecs work best with HDR content on your device
+</Card>
+
+<Note>
+For device-specific HDR troubleshooting, search the web for "HDR" plus your device name. Each device has unique quirks and requirements.
+</Note>

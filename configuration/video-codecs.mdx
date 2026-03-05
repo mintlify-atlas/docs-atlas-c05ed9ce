@@ -1,0 +1,167 @@
+---
+title: Video Codecs
+description: Understanding video codecs in SmartTube - AV1, VP9, and AVC codec comparison, hardware support, and which codec to choose for your device
+---
+
+Video codecs are the algorithms used for video compression. SmartTube supports multiple codecs, each with different hardware requirements and compression efficiency.
+
+## Codec Comparison
+
+Choosing the right codec for your device is important for smooth playback and optimal bandwidth usage.
+
+| Codec | Recommendation | Hardware Support | Compression & Bitrate | Quality |
+|:------|:--------------|:----------------|:---------------------|:--------|
+| **AV01** (AV1) | Best choice, **if your device supports it** | First devices started coming in **2020** | **Best** (e.g. 1.6 Mbps) | Same |
+| **VP9** | **Best choice on most devices** | Most devices **since 2015** | **Better** (e.g. 2.1 Mbps) | Same |
+| **AVC** | Only for old or slow hardware | **All** devices | Good (e.g. 2.7 Mbps) | Same |
+
+<Info>
+Examples taken from the video-only track at 1080p @ 25fps. At the same resolution, **a lower bitrate is better!** YouTube explicitly targets the **same quality** regardless of codec.
+</Info>
+
+## Understanding Bitrate and Quality
+
+At the same resolution, a **lower bitrate is better!** YouTube explicitly targets the **same quality** regardless of the codec. Here's why:
+
+<CardGroup cols={2}>
+  <Card title="Lower Bitrate = Better" icon="chart-line">
+    Newer codecs achieve the same quality with less data, reducing bandwidth usage and saving the environment.
+  </Card>
+  <Card title="Same Quality" icon="equals">
+    YouTube ensures all codecs provide the same visual quality at the same resolution - the difference is only in efficiency.
+  </Card>
+</CardGroup>
+
+<Warning>
+Older codecs have a higher bitrate only because they are less efficient. On YouTube, you **do not** get better quality by simply choosing a higher bitrate. AVC usually has the highest bitrate - this is bad, not good.
+</Warning>
+
+## Which Codec to Choose
+
+<Steps>
+  <Step title="Check Your Device Year">
+    Determine when your Android TV or TV box was manufactured:
+    - **2020 or newer**: Try AV01 first
+    - **2015-2019**: Use VP9
+    - **Before 2015**: Use AVC
+  </Step>
+  
+  <Step title="Test Playback">
+    Play a video and monitor for:
+    - Smooth playback without stuttering
+    - No frame drops
+    - Quick buffering
+  </Step>
+  
+  <Step title="Adjust If Needed">
+    If you experience issues:
+    - Press the **HQ** button in the bottom-left corner
+    - Select **Video formats**
+    - Choose the next older codec (AV01 → VP9 → AVC)
+  </Step>
+</Steps>
+
+## Hardware Support Requirements
+
+### AV01 (AV1)
+
+<Accordion title="Devices with AV1 Support">
+  **Hardware decoding required** - Most TVs and TV boxes do not offer hardware support for AV01.
+  
+  - First devices with AV1 support appeared in 2020
+  - Provides the best compression (lowest bitrate)
+  - Cannot play at all without hardware support
+  - Most devices currently cannot play AV01
+  
+  <Warning>
+  If you get "the video profile is not supported" error, your device does not support AV01. Switch to VP9 instead.
+  </Warning>
+</Accordion>
+
+### VP9
+
+<Accordion title="Devices with VP9 Support">
+  **Best choice for most devices** - Hardware support widely available.
+  
+  - Supported on most devices since 2015
+  - Excellent compression efficiency
+  - Can work without hardware support on powerful CPUs (but may be slow)
+  - High resolutions (4K) might be slow on cheap TV boxes without hardware support
+  
+  <Tip>
+  VP9 is the recommended codec for the vast majority of Android TV devices currently in use.
+  </Tip>
+</Accordion>
+
+### AVC (H.264)
+
+<Accordion title="Universal AVC Support">
+  **Supported on all devices** - Use only when newer codecs don't work.
+  
+  - Universal compatibility across all Android devices
+  - Higher bitrate = more bandwidth usage
+  - Less efficient compression
+  - Best for old or slow hardware that cannot handle VP9
+</Accordion>
+
+## Troubleshooting Codec Issues
+
+<Accordion title="Error: Unknown codec or Can't download video">
+  **Solution:**
+  1. Wait 5 seconds for the video to play
+  2. Press the play button
+  3. Check if you have a USB audio device attached (may cause issues)
+  4. Verify your disk storage is not full
+</Accordion>
+
+<Accordion title='Error: "The video profile is not supported"'>
+  **Solution:**
+  1. Press the **HQ** button in the bottom-left corner
+  2. Select **Video formats**
+  3. Select anything other than AV01 (choose VP9 or AVC)
+  
+  This error means AV01 is not supported on your device.
+</Accordion>
+
+<Accordion title="AV01 does not play / VP9 is slow">
+  **Explanation:**
+  - AV01 is very new - most TVs and TV boxes **do not** have hardware support
+  - Devices without hardware support **cannot** play AV01 at all
+  - VP9 may be slow on devices without hardware acceleration
+  - High resolutions (4K) require official 4K support for smooth playback
+  
+  **Solution:** Switch to VP9 (if using AV01) or AVC (if using VP9).
+</Accordion>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Use Newest Supported Codec" icon="microchip">
+    Always use the newest codec that works smoothly on your device for better compression and lower bandwidth.
+  </Card>
+  
+  <Card title="Test Performance" icon="gauge-high">
+    After selecting a codec, play videos at your typical resolution to ensure smooth playback.
+  </Card>
+  
+  <Card title="Don't Chase Bitrate" icon="ban">
+    Higher bitrate does not mean better quality on YouTube - it only means less efficient compression.
+  </Card>
+  
+  <Card title="Consider Bandwidth" icon="wifi">
+    Newer codecs use less bandwidth for the same quality, helping with slower internet connections.
+  </Card>
+</CardGroup>
+
+## Codec Selection in Settings
+
+To manually select a video codec:
+
+1. While playing a video, press the **HQ** button (bottom-left corner)
+2. Select **Video formats**
+3. Choose your preferred codec: AV01, VP9, or AVC
+4. The selection will be remembered for future videos
+
+<Tip>
+You can set default video quality presets in **Settings** → **Video player** → **Video presets** to automatically use your preferred codec and resolution.
+</Tip>

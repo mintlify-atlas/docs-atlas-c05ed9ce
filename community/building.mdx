@@ -1,0 +1,265 @@
+---
+title: "Building from Source"
+description: "Build and develop SmartTube from source code"
+---
+
+Learn how to build SmartTube from source for development, testing, or customization.
+
+<Warning>
+  **IMPORTANT: OpenJDK 14 or older is required!** Newer JDK versions could cause app crashes. Make sure you have the correct Java version before building.
+</Warning>
+
+## Prerequisites
+
+Before building SmartTube, you'll need:
+
+<Steps>
+  <Step title="Install Java Development Kit">
+    Install **OpenJDK 14 or older** (not newer!)
+    
+    ```bash
+    # Check your Java version
+    java -version
+    ```
+    
+    The output should show version 14 or lower.
+  </Step>
+  
+  <Step title="Install Android SDK">
+    Download and install [Android Studio](https://developer.android.com/studio) or the Android command-line tools
+  </Step>
+  
+  <Step title="Install Git">
+    Install Git for cloning the repository and managing submodules
+  </Step>
+  
+  <Step title="Set up ADB (optional)">
+    Set up [Android Debug Bridge](https://developer.android.com/tools/adb) for installing builds directly to your device
+  </Step>
+</Steps>
+
+## Building SmartTube
+
+### Clone the Repository
+
+Clone SmartTube with submodules:
+
+```bash
+git clone https://github.com/yuliskov/SmartTube.git
+cd SmartTube
+git submodule update --init
+```
+
+<Info>
+  The `git submodule update --init` command is essential - it pulls in required dependencies that are managed as Git submodules.
+</Info>
+
+### Build and Install
+
+To build and install the debug version:
+
+```bash
+# Connect to your Android TV device
+adb connect <device_ip_address>
+
+# Build and install the stable debug flavor
+gradlew clean installStstableDebug
+```
+
+<Note>
+  Replace `<device_ip_address>` with your Android TV's IP address (found in Settings > Network). Make sure ADB debugging is enabled on your device.
+</Note>
+
+## Build Flavors
+
+SmartTube has three product flavors, each with its own package ID:
+
+<CardGroup cols={3}>
+  <Card title="Beta" icon="flask">
+    **Application ID:** `org.smarttube.beta`
+    
+    Latest features and bug fixes. Recommended for most users.
+    
+    ```bash
+    gradlew installStbetaDebug
+    ```
+  </Card>
+  
+  <Card title="Stable" icon="check">
+    **Application ID:** `org.smarttube.stable`
+    
+    More tested and stable releases.
+    
+    ```bash
+    gradlew installStstableDebug
+    ```
+  </Card>
+  
+  <Card title="F-Droid" icon="mobile">
+    **Application ID:** `app.smarttube.fdroid`
+    
+    F-Droid compatible build.
+    
+    ```bash
+    gradlew installStfdroidDebug
+    ```
+  </Card>
+</CardGroup>
+
+### Build Types
+
+Each flavor can be built in two configurations:
+
+- **Debug**: Unsigned build with debugging enabled
+  - Command: `gradlew install<Flavor>Debug`
+  - Example: `gradlew installStbetaDebug`
+
+- **Release**: Optimized and signed build (requires keystore)
+  - Command: `gradlew install<Flavor>Release`
+  - Example: `gradlew installStbetaRelease`
+
+## ADB Connection
+
+Connect to your Android TV device over the network:
+
+### Enable ADB Debugging
+
+<Steps>
+  <Step title="Enable Developer Options">
+    Go to **Settings > About** and click on **Build** repeatedly until developer mode is activated
+  </Step>
+  
+  <Step title="Enable ADB Debugging">
+    Go to **Settings > Developer Options** and enable **ADB debugging** and **Network debugging**
+  </Step>
+  
+  <Step title="Find your device IP">
+    Go to **Settings > Network** to find your device's IP address
+  </Step>
+  
+  <Step title="Connect via ADB">
+    ```bash
+    adb connect 192.168.1.100:5555
+    ```
+    Replace with your device's actual IP address
+  </Step>
+</Steps>
+
+### Verify Connection
+
+```bash
+# List connected devices
+adb devices
+
+# Should show something like:
+# 192.168.1.100:5555    device
+```
+
+<Info>
+  The first time you connect, you'll need to accept the connection on your TV. A prompt will appear asking to allow USB debugging.
+</Info>
+
+## Development Setup
+
+### Open in Android Studio
+
+1. Launch Android Studio
+2. Click **Open** and select the SmartTube directory
+3. Wait for Gradle sync to complete
+4. Select your build flavor from the **Build Variants** panel
+
+### Recommended IDE Settings
+
+- **Compile SDK Version**: 31 (or as specified in build.gradle)
+- **Build Tools Version**: As specified in build.gradle
+- **Min SDK**: 19 (Android 4.4 KitKat)
+- **Target SDK**: As specified in build.gradle
+
+## Architecture Information
+
+SmartTube supports multiple CPU architectures:
+
+- **armeabi-v7a**: 32-bit ARM (most Android TV devices)
+- **arm64-v8a**: 64-bit ARM (newer devices, Pixel Tablet)
+- **x86**: 32-bit x86 (for WSL and some TV boxes)
+
+<Note>
+  The build generates a universal APK that includes all architectures, plus separate APKs for each architecture. The universal APK is larger but works on all supported devices.
+</Note>
+
+## Common Build Issues
+
+### JDK Version Error
+
+**Problem**: App crashes or build fails
+
+**Solution**: Verify you're using OpenJDK 14 or older
+
+```bash
+java -version
+# Should show version 14 or lower
+```
+
+### Submodule Not Initialized
+
+**Problem**: Build fails with missing dependencies
+
+**Solution**: Initialize submodules
+
+```bash
+git submodule update --init
+```
+
+### ADB Connection Failed
+
+**Problem**: Can't connect to Android TV device
+
+**Solution**:
+- Ensure both devices are on the same network
+- Check that ADB debugging is enabled
+- Try restarting ADB: `adb kill-server && adb start-server`
+
+### Out of Memory
+
+**Problem**: Gradle build runs out of memory
+
+**Solution**: Increase Gradle memory in `gradle.properties`
+
+```properties
+org.gradle.jvmargs=-Xmx4096m
+```
+
+## Building Release APKs
+
+To build signed release APKs:
+
+1. Create a `keystore.properties` file in the project root:
+
+```properties
+storeFile=/path/to/your/keystore.jks
+storePassword=your_store_password
+keyAlias=your_key_alias
+keyPassword=your_key_password
+```
+
+2. Build the release version:
+
+```bash
+gradlew assembleStbetaRelease
+```
+
+3. Find the APK in `smarttubetv/build/outputs/apk/stbeta/release/`
+
+<Warning>
+  Never commit your `keystore.properties` file to version control! Add it to `.gitignore`.
+</Warning>
+
+## Additional Resources
+
+- **GitHub Repository**: [yuliskov/SmartTube](https://github.com/yuliskov/SmartTube)
+- **Android TV Development**: [Android Developers Guide](https://developer.android.com/training/tv)
+- **ExoPlayer Documentation**: [ExoPlayer GitHub](https://github.com/google/ExoPlayer)
+
+## Contributing Your Build
+
+Built something interesting? See the [Contributing Guide](/community/contributing) to learn how to submit your changes back to the project.

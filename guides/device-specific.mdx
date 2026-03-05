@@ -1,0 +1,329 @@
+---
+title: Device-Specific Setup
+description: Special installation steps and notes for specific Android TV devices including Chromecast, Fire TV, NVIDIA Shield, and Xiaomi
+---
+
+While SmartTube works on most Android TV devices, some require additional setup steps or have specific limitations. This guide covers device-specific instructions and known issues.
+
+## Chromecast with Google TV
+
+Chromecast with Google TV blocks third-party app installation by default. You need to enable developer options first.
+
+### Setup Steps
+
+<Steps>
+  <Step title="Enable Developer Options">
+    On your Chromecast:
+    1. Open the side menu
+    2. Go to _Settings > System > About_
+    3. Scroll down to **Android TV OS build**
+    4. Click it repeatedly until you see a toast message about becoming a developer
+    5. Keep clicking until developer mode is activated
+  </Step>
+  
+  <Step title="Enable Unknown Sources">
+    1. Go back to main _Settings_ page
+    2. Select _Apps > Security & Restrictions > Unknown sources_
+    3. Turn on the toggle for your file browser (e.g., **Downloader by AFTVnews**)
+  </Step>
+  
+  <Step title="Install SmartTube">
+    Now follow the standard [Installation guide](/installation) to download and install SmartTube
+  </Step>
+</Steps>
+
+<Tip>
+**Quick install:** Use Downloader by AFTVnews and enter `kutt.it/stn_beta` or `kutt.it/stn_stable`
+</Tip>
+
+### Visual Guide
+
+For detailed screenshots of the Chromecast installation process, see [this Android Police guide](https://www.androidpolice.com/2021/02/07/how-to-sideload-any-apk-on-chromecast-with-android-tv/#install-the-apk).
+
+### Voice Search Setup
+
+To enable voice search on Chromecast with Google TV:
+
+<Steps>
+  <Step title="Uninstall Official YouTube App">
+    You must remove the official YouTube app (no root required)
+  </Step>
+  
+  <Step title="Install Bridge App">
+    Download and install the ATV Bridge SmartTube app: `kutt.it/stn_bridge_atv`
+  </Step>
+  
+  <Step title="Test Voice Search">
+    Use voice search on your remote - it should now open SmartTube
+  </Step>
+</Steps>
+
+<Info>
+The bridge app intercepts voice search requests and redirects them to SmartTube. It won't appear in your launcher - it works automatically in the background.
+</Info>
+
+## Amazon Fire TV
+
+Fire TV devices work well with SmartTube and are among the easiest to set up.
+
+### Installation
+
+Fire TV allows sideloading by default. Simply:
+
+1. Install [Downloader by AFTVnews](https://www.aftvnews.com/downloader/) from the Amazon AppStore
+2. Open Downloader and enter: `kutt.it/stn_beta` or `kutt.it/stn_stable`
+3. Follow the installation prompts
+
+### Voice Search Setup
+
+Fire TV has special bridge app support:
+
+<Steps>
+  <Step title="Uninstall Official YouTube App">
+    Remove the YouTube app (no root required on Fire TV)
+  </Step>
+  
+  <Step title="Install Amazon Bridge">
+    Download and install: `kutt.it/stn_bridge_amazon`
+  </Step>
+  
+  <Step title="Use Alexa Voice Search">
+    Now when you use Alexa to search YouTube, it opens in SmartTube
+  </Step>
+</Steps>
+
+<Tip>
+On Fire TV, you may need to explicitly say "YouTube" when searching (e.g., "YouTube cute cats" instead of just "cute cats").
+</Tip>
+
+### Fire TV Compatibility
+
+SmartTube works on **all generations** of Fire TV Stick, including:
+- Fire TV Stick Lite
+- Fire TV Stick (2nd, 3rd, 4th Gen)
+- Fire TV Stick 4K
+- Fire TV Cube
+
+## NVIDIA Shield
+
+NVIDIA Shield is a powerful Android TV device that runs SmartTube excellently, with one notable exception.
+
+### HDR Limitation
+
+<Warning>
+**Important:** NVIDIA Shield supports HDR in general, but **NOT the specific HDR format used by YouTube**.
+</Warning>
+
+This is a hardware limitation of the Shield, not a SmartTube issue. HDR YouTube videos will play but without HDR enhancement.
+
+### What Works on Shield
+
+✅ All video codecs (AV01, VP9, AVC) with hardware acceleration  
+✅ 4K/8K resolution support  
+✅ 60fps playback  
+✅ All SmartTube features  
+✅ Excellent performance  
+
+❌ YouTube's HDR format  
+
+<Info>
+For more details about HDR compatibility, see [HDR documentation](/configuration/hdr).
+</Info>
+
+### Voice Search Setup (Requires Root)
+
+Unlike Fire TV and Chromecast, NVIDIA Shield requires root access for voice search integration:
+
+<Steps>
+  <Step title="Root Your Shield">
+    Search for a rooting guide specific to your Shield model
+  </Step>
+  
+  <Step title="Uninstall Official YouTube">
+    Use ADB command: `adb shell pm uninstall com.google.android.youtube.tv`
+  </Step>
+  
+  <Step title="Install Bridge App">
+    Download and install: `kutt.it/stn_bridge_atv`
+  </Step>
+</Steps>
+
+<Warning>
+Rooting voids your warranty and can brick your device if done incorrectly. Proceed at your own risk.
+</Warning>
+
+## Xiaomi Devices with Chinese Firmware
+
+Xiaomi devices with Chinese firmware have special restrictions that can block SmartTube beta installation.
+
+### The Issue
+
+- **Chinese firmware**: Blocks SmartTube **beta** version installation
+- **International firmware**: No issues, works normally
+- **Stable version**: Usually works even on Chinese firmware
+
+### Solutions
+
+<AccordionGroup>
+  <Accordion title="Solution 1: Use Stable Version (Recommended)">
+    Instead of beta, use the **stable version** of SmartTube:
+    
+    1. Download from: `kutt.it/stn_stable`
+    2. Install normally
+    3. Stable version bypasses Chinese firmware restrictions
+    
+    <Tip>
+    The stable version is still excellent and receives all major features, just slightly less frequently than beta.
+    </Tip>
+  </Accordion>
+  
+  <Accordion title="Solution 2: Flash International Firmware">
+    Switch to the international firmware version for your Xiaomi device.
+    
+    **Pros:**
+    - Removes restrictions
+    - Allows beta version
+    - Often improves overall device experience
+    
+    **Cons:**
+    - Requires technical knowledge
+    - Risk of bricking if done incorrectly
+    - May void warranty
+    
+    Search for "Xiaomi [your model] international firmware" for specific guides.
+  </Accordion>
+  
+  <Accordion title="Solution 3: Factory Reset Method (2020 and Earlier Devices)">
+    For devices from 2020 or before:
+    
+    <Steps>
+      <Step title="Factory Reset">
+        Perform a complete factory reset on your Xiaomi device
+      </Step>
+      
+      <Step title="Install SmartTube Beta First">
+        Before doing ANY system updates, install SmartTube beta
+      </Step>
+      
+      <Step title="Update System">
+        Now you can safely update your system - SmartTube should continue working
+      </Step>
+    </Steps>
+    
+    <Warning>
+    This method only works for devices manufactured in 2020 or earlier. Newer devices require Solution 1 or 2.
+    </Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Xiaomi Compatibility
+
+SmartTube has been successfully tested on:
+- Xiaomi Mi Box (all versions)
+- Xiaomi Mi TV Stick
+- Xiaomi Mi Box S
+
+## Android 11 Voice Search Issues
+
+Devices running Android 11 may experience voice search problems.
+
+### Symptom
+
+Voice search doesn't return results, or searches fail to execute properly.
+
+### Solution
+
+<Steps>
+  <Step title="Identify the Problem">
+    Recent updates to "Google app for Android TV" cause this bug
+  </Step>
+  
+  <Step title="Uninstall Updates">
+    1. Go to _Settings > Apps > Google app for Android TV_
+    2. Select **Uninstall updates**
+    3. Confirm to revert to the factory version
+  </Step>
+  
+  <Step title="Test Voice Search">
+    Try voice search again - it should now work correctly
+  </Step>
+  
+  <Step title="Prevent Auto-Update (Optional)">
+    Disable auto-updates for the Google app to prevent the issue from returning
+  </Step>
+</Steps>
+
+<Info>
+This is a Google app issue, not specific to SmartTube. The bug affects multiple apps using voice search on Android TV 11.
+</Info>
+
+## Other Android Devices
+
+For generic Android TV devices and TV boxes:
+
+### Voice Search (Requires Root)
+
+Most generic Android devices require root for voice search integration:
+
+<Steps>
+  <Step title="Root Your Device">
+    Search for a rooting guide specific to your device model
+  </Step>
+  
+  <Step title="Uninstall Official YouTube">
+    Use ADB: `adb shell pm uninstall com.google.android.youtube.tv`
+  </Step>
+  
+  <Step title="Install Bridge App">
+    Download and install: `kutt.it/stn_bridge_atv`
+  </Step>
+</Steps>
+
+### Installation Notes
+
+Generic Android TV boxes work well with SmartTube:
+- No special setup required (unlike Chromecast)
+- Usually allow sideloading by default
+- Follow standard [Installation guide](/installation)
+
+<Tip>
+If you encounter issues, check the [Troubleshooting guide](/guides/troubleshooting) for common solutions.
+</Tip>
+
+## Unsupported Devices
+
+SmartTube **ONLY** works on Android-based devices. It is **NOT** compatible with:
+
+❌ Samsung Tizen TVs  
+❌ LG webOS TVs  
+❌ Roku devices  
+❌ iOS / Apple TV  
+❌ Smartphones and tablets (not optimized, no support offered)  
+
+<Warning>
+The app cannot easily be ported to non-Android platforms. If you have an unsupported TV, consider using an Android TV stick or box instead.
+</Warning>
+
+### Alternative for Unsupported Devices
+
+If you have a non-Android TV:
+
+1. **Buy an Android TV stick or box** (recommended options):
+   - Chromecast with Google TV (~$50)
+   - Amazon Fire TV Stick (~$30-50)
+   - Xiaomi Mi Box S (~$60)
+   - Generic Android TV boxes (~$30-100)
+
+2. Connect it to your TV's HDMI port
+3. Install SmartTube on the Android device
+
+## Need Device-Specific Help?
+
+<Info>
+If your device isn't covered here or you need specific help:
+
+1. Search the [FAQ](/guides/faq) for more information
+2. Check the [Troubleshooting guide](/guides/troubleshooting)
+3. Ask in the [Telegram support group](http://t.me/SmartTubeEN)
+4. Report device-specific issues on [GitHub](https://github.com/yuliskov/SmartTube/issues)
+</Info>
